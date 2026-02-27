@@ -1,0 +1,747 @@
+/* ============================================================
+   COSMIC NUMBERS — Vedic Numerology Luck Oracle
+   style.css — All visual styles
+   Author: Astro Pankaj Seth
+   ============================================================ */
+
+/* ── CSS VARIABLES ────────────────────────────────────────── */
+:root {
+  --gold:       #c9a84c;
+  --gold-light: #f0d080;
+  --gold-dim:   #7a6030;
+  --dark:       #060410;
+  --deep:       #0d0820;
+  --mid:        #1a1235;
+  --text:       #e8dfc8;
+  --text-dim:   #8a7e68;
+  --accent:     #6a3fa0;
+  --accent2:    #2d1f6e;
+
+  /* Match colors */
+  --bestfriend: #f0d080;
+  --friend:     #7ceba0;
+  --neutral:    #6090c0;
+  --enemy:      #f07878;
+}
+
+/* ── RESET ────────────────────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── BASE ─────────────────────────────────────────────────── */
+body {
+  background:   var(--dark);
+  color:        var(--text);
+  font-family:  'EB Garamond', serif;
+  min-height:   100vh;
+  overflow-x:   hidden;
+  position:     relative;
+}
+
+/* ── STARFIELD ────────────────────────────────────────────── */
+#stars {
+  position:       fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index:        0;
+}
+
+.star {
+  position:      absolute;
+  background:    white;
+  border-radius: 50%;
+  opacity:       0;
+  animation:     twinkle var(--dur) ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0;              transform: scale(0.5); }
+  50%       { opacity: var(--max-op); transform: scale(1);   }
+}
+
+/* ── NEBULA BLOBS ─────────────────────────────────────────── */
+body::before {
+  content:        '';
+  position:       fixed;
+  top: -20%; left: -20%;
+  width: 60%; height: 60%;
+  background:     radial-gradient(ellipse, rgba(106,63,160,0.15) 0%, transparent 70%);
+  pointer-events: none;
+  z-index:        0;
+}
+
+body::after {
+  content:        '';
+  position:       fixed;
+  bottom: -20%; right: -20%;
+  width: 60%; height: 60%;
+  background:     radial-gradient(ellipse, rgba(45,31,110,0.2) 0%, transparent 70%);
+  pointer-events: none;
+  z-index:        0;
+}
+
+/* ── LAYOUT ───────────────────────────────────────────────── */
+.container {
+  position:   relative;
+  z-index:    1;
+  max-width:  780px;
+  margin:     0 auto;
+  padding:    40px 20px 80px;
+}
+
+/* ── HEADER ───────────────────────────────────────────────── */
+header {
+  text-align:    center;
+  margin-bottom: 50px;
+  position:      relative;
+}
+
+.crown-symbol {
+  font-size:     2.5rem;
+  display:       block;
+  margin-bottom: 10px;
+  animation:     float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0);   }
+  50%       { transform: translateY(-8px); }
+}
+
+header h1 {
+  font-family:              'Cinzel Decorative', serif;
+  font-size:                clamp(1.6rem, 5vw, 2.8rem);
+  font-weight:              900;
+  background:               linear-gradient(135deg, var(--gold-light), var(--gold), #a06820);
+  -webkit-background-clip:  text;
+  -webkit-text-fill-color:  transparent;
+  background-clip:          text;
+  letter-spacing:           0.05em;
+  line-height:              1.2;
+}
+
+header p {
+  margin-top:     12px;
+  font-size:      1.1rem;
+  color:          var(--text-dim);
+  font-style:     italic;
+  letter-spacing: 0.08em;
+}
+
+/* ── DIVIDER ──────────────────────────────────────────────── */
+.divider {
+  display:    flex;
+  align-items: center;
+  gap:        12px;
+  margin:     16px auto;
+  width:      fit-content;
+}
+
+.divider span { color: var(--gold); font-size: 1.2rem; }
+
+.divider::before,
+.divider::after {
+  content: '';
+  width:   80px;
+  height:  1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim));
+}
+
+.divider::after {
+  background: linear-gradient(90deg, var(--gold-dim), transparent);
+}
+
+/* ── ZODIAC STRIP ─────────────────────────────────────────── */
+.zodiac-strip {
+  text-align:     center;
+  letter-spacing: 0.3em;
+  color:          rgba(201,168,76,0.12);
+  font-size:      1.4rem;
+  margin:         8px 0 40px;
+  user-select:    none;
+}
+
+/* ── CARD ─────────────────────────────────────────────────── */
+.card {
+  background:     linear-gradient(135deg, rgba(26,18,53,0.9), rgba(13,8,32,0.95));
+  border:         1px solid rgba(201,168,76,0.25);
+  border-radius:  16px;
+  padding:        36px;
+  margin-bottom:  24px;
+  position:       relative;
+  overflow:       hidden;
+  backdrop-filter: blur(10px);
+  box-shadow:     0 8px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(201,168,76,0.1);
+}
+
+.card::before {
+  content:    '';
+  position:   absolute;
+  top: 0; left: 0; right: 0;
+  height:     2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.card-title {
+  font-family:    'Cinzel', serif;
+  font-size:      1rem;
+  font-weight:    600;
+  color:          var(--gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom:  24px;
+  display:        flex;
+  align-items:    center;
+  gap:            10px;
+}
+
+.card-title::after {
+  content:    '';
+  flex:       1;
+  height:     1px;
+  background: linear-gradient(90deg, var(--gold-dim), transparent);
+}
+
+/* ── FORM ELEMENTS ────────────────────────────────────────── */
+label {
+  display:        block;
+  font-family:    'Cinzel', serif;
+  font-size:      0.78rem;
+  color:          var(--gold-dim);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom:  8px;
+}
+
+input[type="number"],
+input[type="text"] {
+  width:              100%;
+  background:         rgba(255,255,255,0.04);
+  border:             1px solid rgba(201,168,76,0.2);
+  border-radius:      8px;
+  color:              var(--text);
+  font-family:        'EB Garamond', serif;
+  font-size:          1.1rem;
+  padding:            12px 16px;
+  outline:            none;
+  transition:         border-color 0.3s, box-shadow 0.3s;
+  margin-bottom:      20px;
+  -webkit-appearance: none;
+  color-scheme:       dark;
+}
+
+input:focus {
+  border-color: var(--gold);
+  box-shadow:   0 0 0 3px rgba(201,168,76,0.1);
+}
+
+input::placeholder { color: var(--text-dim); }
+
+/* ── DATE INPUT ───────────────────────────────────────────── */
+.date-input-wrap {
+  position:      relative;
+  margin-bottom: 20px;
+}
+
+.date-input-wrap input {
+  margin-bottom:  0;
+  letter-spacing: 0.12em;
+  font-size:      1.2rem;
+  padding-right:  50px;
+}
+
+.date-icon {
+  position:   absolute;
+  right:      14px;
+  top:        50%;
+  transform:  translateY(-50%);
+  font-size:  1.2rem;
+  pointer-events: none;
+  opacity:    0.4;
+}
+
+.date-error {
+  font-size:  0.8rem;
+  color:      var(--enemy);
+  font-style: italic;
+  margin-top: 6px;
+  min-height: 1em;
+  display:    block;
+}
+
+/* ── NUMBER BADGES ────────────────────────────────────────── */
+.numbers-row {
+  display:   flex;
+  gap:       16px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.num-badge {
+  flex:          1;
+  min-width:     120px;
+  background:    rgba(201,168,76,0.06);
+  border:        1px solid rgba(201,168,76,0.2);
+  border-radius: 12px;
+  padding:       16px;
+  text-align:    center;
+  transition:    all 0.4s;
+}
+
+.num-badge.active {
+  border-color: var(--gold);
+  box-shadow:   0 0 20px rgba(201,168,76,0.15);
+  background:   rgba(201,168,76,0.1);
+}
+
+.num-badge .label {
+  font-family:    'Cinzel', serif;
+  font-size:      0.7rem;
+  color:          var(--text-dim);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom:  8px;
+}
+
+.num-badge .value {
+  font-family: 'Cinzel Decorative', serif;
+  font-size:   2.2rem;
+  font-weight: 700;
+  color:       var(--gold-light);
+  line-height: 1;
+  min-height:  2.2rem;
+  display:     flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.num-badge .value.empty { color: rgba(201,168,76,0.2); }
+
+.num-badge .meaning {
+  font-size:  0.8rem;
+  color:      var(--text-dim);
+  font-style: italic;
+  margin-top: 6px;
+  min-height: 1.2em;
+}
+
+/* ── SCORE BOXES ──────────────────────────────────────────── */
+.score-row {
+  display:       flex;
+  gap:           12px;
+  margin-bottom: 20px;
+  flex-wrap:     wrap;
+}
+
+.score-box {
+  flex:          1;
+  min-width:     120px;
+  background:    rgba(201,168,76,0.06);
+  border:        1px solid rgba(201,168,76,0.2);
+  border-radius: 10px;
+  padding:       12px;
+  text-align:    center;
+}
+
+.score-box .score-label {
+  font-family:    'Cinzel', serif;
+  font-size:      0.7rem;
+  color:          var(--text-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom:  6px;
+}
+
+.score-box .score-value {
+  font-family: 'Cinzel Decorative', serif;
+  font-size:   1.6rem;
+  color:       var(--gold-light);
+}
+
+.score-box .score-weight {
+  font-size:  0.75rem;
+  color:      var(--text-dim);
+  margin-top: 4px;
+}
+
+/* ── RESULT NUMBERS ROW ───────────────────────────────────── */
+.result-numbers-row {
+  display:       flex;
+  gap:           16px;
+  flex-wrap:     wrap;
+  margin-bottom: 20px;
+}
+
+.result-num-badge {
+  flex:      1;
+  min-width: 140px;
+}
+
+.result-num-badge .value {
+  font-family: 'Cinzel Decorative', serif;
+  font-size:   2.5rem;
+  color:       var(--gold-light);
+  display:     flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  min-height:  2.5rem;
+}
+
+/* ── BUTTON ───────────────────────────────────────────────── */
+.btn {
+  width:           100%;
+  padding:         16px 24px;
+  background:      linear-gradient(135deg, #7a5020, var(--gold), #7a5020);
+  background-size: 200% 100%;
+  border:          none;
+  border-radius:   10px;
+  font-family:     'Cinzel', serif;
+  font-size:       1rem;
+  font-weight:     600;
+  letter-spacing:  0.15em;
+  text-transform:  uppercase;
+  color:           var(--dark);
+  cursor:          pointer;
+  transition:      background-position 0.4s, transform 0.2s, box-shadow 0.3s;
+  box-shadow:      0 4px 20px rgba(201,168,76,0.2);
+  margin-top:      8px;
+}
+
+.btn:hover {
+  background-position: 100% 0;
+  box-shadow:          0 6px 30px rgba(201,168,76,0.35);
+  transform:           translateY(-1px);
+}
+
+.btn:active  { transform: translateY(1px); }
+
+.btn:disabled {
+  opacity:   0.4;
+  cursor:    not-allowed;
+  transform: none;
+}
+
+.info-text {
+  font-size:  0.85rem;
+  color:      var(--text-dim);
+  font-style: italic;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* ── ORACLE SECTION ───────────────────────────────────────── */
+#oracle-section {
+  display: none;
+}
+
+#oracle-section.visible {
+  display:   block;
+  animation: fadeUp 0.6s ease-out;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ── LUCK METER ───────────────────────────────────────────── */
+.luck-meter-wrap   { margin: 28px 0; }
+
+.luck-meter-label {
+  display:         flex;
+  justify-content: space-between;
+  font-family:     'Cinzel', serif;
+  font-size:       0.75rem;
+  letter-spacing:  0.1em;
+  color:           var(--text-dim);
+  text-transform:  uppercase;
+  margin-bottom:   8px;
+}
+
+.luck-meter-track {
+  height:        12px;
+  background:    rgba(255,255,255,0.05);
+  border-radius: 100px;
+  border:        1px solid rgba(201,168,76,0.15);
+  overflow:      hidden;
+}
+
+.luck-meter-fill {
+  height:        100%;
+  border-radius: 100px;
+  width:         0;
+  transition:    width 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+  position:      relative;
+}
+
+.luck-meter-fill::after {
+  content:       '';
+  position:      absolute;
+  top: 0; right: 0; bottom: 0;
+  width:         40px;
+  background:    linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
+  border-radius: 100px;
+}
+
+.luck-scale {
+  text-align:  right;
+  font-family: 'Cinzel Decorative', serif;
+  font-size:   2.5rem;
+  font-weight: 700;
+  margin-top:  12px;
+  line-height: 1;
+}
+
+/* ── MATCH BREAKDOWN GRID ─────────────────────────────────── */
+.match-section-header {
+  grid-column:    1 / -1;
+  font-family:    'Cinzel', serif;
+  font-size:      0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color:          var(--gold-dim);
+  padding:        8px 0 4px;
+  border-bottom:  1px solid rgba(201,168,76,0.15);
+  margin-top:     8px;
+}
+
+.match-section-header:first-child { margin-top: 0; }
+
+.match-grid {
+  display:               grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:                   10px;
+  margin:                8px 0;
+}
+
+@media (max-width: 480px) {
+  .match-grid { grid-template-columns: 1fr; }
+}
+
+.match-item {
+  background:    rgba(255,255,255,0.03);
+  border:        1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  padding:       16px 12px;
+  text-align:    center;
+  position:      relative;
+  overflow:      hidden;
+  transition:    transform 0.3s;
+  animation:     matchReveal 0.5s ease-out both;
+}
+
+@keyframes matchReveal {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1);   }
+}
+
+/* Match item variants */
+.match-item.bestfriend { border-color: rgba(240,208,128,0.5); background: rgba(240,208,128,0.07); }
+.match-item.friend     { border-color: rgba(80,200,120,0.4);  background: rgba(80,200,120,0.06);  }
+.match-item.neutral    { border-color: rgba(96,144,192,0.4);  background: rgba(96,144,192,0.06);  }
+.match-item.enemy      { border-color: rgba(200,80,80,0.4);   background: rgba(200,80,80,0.06);   }
+
+.match-type-label {
+  font-family:    'Cinzel', serif;
+  font-size:      0.7rem;
+  letter-spacing: 0.1em;
+  color:          var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom:  6px;
+}
+
+.match-num {
+  font-family:  'Cinzel Decorative', serif;
+  font-size:    1.8rem;
+  font-weight:  700;
+  line-height:  1;
+  margin-bottom: 4px;
+}
+
+.match-planet {
+  font-size:     0.7rem;
+  opacity:       0.55;
+  font-style:    italic;
+  margin-bottom: 5px;
+}
+
+.match-relation {
+  font-size:     0.85rem;
+  font-style:    italic;
+  margin-bottom: 4px;
+}
+
+.match-verdict {
+  display:        inline-block;
+  padding:        2px 10px;
+  border-radius:  100px;
+  font-family:    'Cinzel', serif;
+  font-size:      0.65rem;
+  font-weight:    600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Match colors */
+.bestfriend .match-num,
+.bestfriend .match-relation { color: var(--bestfriend); }
+.bestfriend .match-verdict  { background: rgba(240,208,128,0.15); color: var(--bestfriend); }
+
+.friend .match-num,
+.friend .match-relation     { color: var(--friend); }
+.friend .match-verdict      { background: rgba(80,200,120,0.15);  color: var(--friend);     }
+
+.neutral .match-num,
+.neutral .match-relation    { color: var(--neutral); }
+.neutral .match-verdict     { background: rgba(96,144,192,0.15);  color: var(--neutral);    }
+
+.enemy .match-num,
+.enemy .match-relation      { color: var(--enemy); }
+.enemy .match-verdict       { background: rgba(200,80,80,0.15);   color: var(--enemy);      }
+
+/* ── VERDICT BANNER ───────────────────────────────────────── */
+.verdict-banner {
+  text-align:    center;
+  padding:       24px 20px;
+  border-radius: 12px;
+  margin-top:    20px;
+  border:        1px solid;
+  position:      relative;
+  overflow:      hidden;
+}
+
+.verdict-banner::before {
+  content:    '';
+  position:   absolute;
+  inset:      0;
+  opacity:    0.06;
+  background: currentColor;
+}
+
+.verdict-emoji { font-size: 3rem; display: block; margin-bottom: 8px; }
+
+.verdict-title {
+  font-family:   'Cinzel Decorative', serif;
+  font-size:     1.5rem;
+  font-weight:   700;
+  margin-bottom: 4px;
+}
+
+.verdict-hindi {
+  font-size:     1.1rem;
+  opacity:       0.8;
+  margin:        4px 0;
+  font-family:   'EB Garamond', serif;
+}
+
+.verdict-cat {
+  font-family:    'Cinzel', serif;
+  font-size:      1rem;
+  font-weight:    700;
+  letter-spacing: 0.15em;
+  margin:         6px 0;
+}
+
+.verdict-desc {
+  font-size:   1rem;
+  font-style:  italic;
+  opacity:     0.85;
+  max-width:   420px;
+  margin:      0 auto;
+  line-height: 1.6;
+}
+
+/* ── MATCH BREAKDOWN HEADING ──────────────────────────────── */
+.breakdown-heading {
+  font-family:    'Cinzel', serif;
+  font-size:      0.8rem;
+  color:          var(--gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom:  12px;
+  margin-top:     24px;
+}
+
+/* ── NUMEROLOGY KEY TABLE ─────────────────────────────────── */
+details         { margin-top: 12px; cursor: pointer; }
+
+summary {
+  font-family:    'Cinzel', serif;
+  font-size:      0.8rem;
+  letter-spacing: 0.1em;
+  color:          var(--gold-dim);
+  text-transform: uppercase;
+  list-style:     none;
+  display:        flex;
+  align-items:    center;
+  gap:            8px;
+  user-select:    none;
+}
+
+summary::before {
+  content:    '▶';
+  font-size:  0.6rem;
+  transition: transform 0.3s;
+}
+
+details[open] summary::before { transform: rotate(90deg); }
+
+.num-table {
+  margin-top:      16px;
+  border-collapse: collapse;
+  width:           100%;
+  font-size:       0.9rem;
+}
+
+.num-table th {
+  font-family:    'Cinzel', serif;
+  font-size:      0.7rem;
+  letter-spacing: 0.1em;
+  color:          var(--gold-dim);
+  text-transform: uppercase;
+  padding:        8px 12px;
+  border-bottom:  1px solid rgba(201,168,76,0.15);
+  text-align:     left;
+}
+
+.num-table td {
+  padding:        8px 12px;
+  border-bottom:  1px solid rgba(255,255,255,0.04);
+  color:          var(--text-dim);
+  vertical-align: top;
+}
+
+.num-table td:first-child {
+  font-family: 'Cinzel Decorative', serif;
+  color:       var(--gold-light);
+  font-size:   1.1rem;
+  font-weight: 700;
+  width:       40px;
+}
+
+/* ── RESET BUTTON ─────────────────────────────────────────── */
+.reset-btn {
+  background:     transparent;
+  border:         1px solid rgba(201,168,76,0.3);
+  color:          var(--gold-dim);
+  border-radius:  8px;
+  font-family:    'Cinzel', serif;
+  font-size:      0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding:        8px 20px;
+  cursor:         pointer;
+  transition:     all 0.3s;
+  display:        block;
+  margin:         16px auto 0;
+}
+
+.reset-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 500px) {
+  .card { padding: 24px 18px; }
+  header h1 { font-size: 1.5rem; }
+  .verdict-title { font-size: 1.2rem; }
+}

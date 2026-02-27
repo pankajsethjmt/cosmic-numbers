@@ -1,0 +1,26 @@
+.ui-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 16px auto;
+  width: 100%;
+}
+
+.ui-divider span {
+  color: var(--gold);
+  font-size: 1.2rem;
+}
+
+.ui-divider::before,
+.ui-divider::after {
+  content: "";
+  flex: 0 0 80px;
+
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim));
+}
+
+.ui-divider::after {
+  background: linear-gradient(90deg, var(--gold-dim), transparent);
+}

@@ -1,0 +1,9 @@
+.ui-form-label {
+  display: block;
+  font-family: "Cinzel", serif;
+  font-size: 0.78rem;
+  color: var(--gold-dim);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}

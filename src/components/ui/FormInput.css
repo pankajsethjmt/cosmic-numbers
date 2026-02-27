@@ -1,0 +1,26 @@
+.ui-form-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: "EB Garamond", serif;
+  font-size: 1.1rem;
+  padding: 12px 16px;
+  outline: none;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+  margin-bottom: 20px;
+  -webkit-appearance: none;
+  color-scheme: dark;
+}
+
+.ui-form-input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+}
+
+.ui-form-input::placeholder {
+  color: var(--text-dim);
+}

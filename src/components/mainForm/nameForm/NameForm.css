@@ -1,0 +1,274 @@
+.name-form-hint {
+  color: var(--text-dim);
+  font-style: italic;
+  font-size: 0.82em;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.name-breakdown {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 16px 0 8px;
+  justify-content: center;
+}
+
+.name-letter-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 30px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  background: rgba(201, 168, 76, 0.05);
+  transition: all 0.3s;
+}
+
+.name-letter-chip.vowel {
+  border-color: rgba(201, 168, 76, 0.6);
+  background: rgba(201, 168, 76, 0.13);
+}
+
+.name-letter-chip .chip-letter {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  line-height: 1;
+}
+
+.name-letter-chip.vowel .chip-letter {
+  color: var(--gold-light);
+}
+
+.name-letter-chip .chip-value {
+  font-family: "Cinzel", serif;
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  margin-top: 3px;
+}
+
+.name-breakdown-legend {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--text-dim);
+}
+
+.name-breakdown-empty {
+  margin-top: 12px;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.legend-vowel {
+  color: var(--gold);
+}
+
+.name-numbers-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.name-num-badge {
+  flex: 1;
+  min-width: 140px;
+  border-radius: 14px;
+  padding: 20px 14px;
+  text-align: center;
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  background: rgba(201, 168, 76, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.name-num-badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.name-num-badge.name-badge {
+  border-color: rgba(240, 208, 128, 0.4);
+  background: rgba(240, 208, 128, 0.07);
+}
+
+.name-num-badge.soul-badge {
+  border-color: rgba(124, 235, 160, 0.4);
+  background: rgba(124, 235, 160, 0.07);
+}
+
+.name-num-badge.pers-badge {
+  border-color: rgba(96, 144, 192, 0.4);
+  background: rgba(96, 144, 192, 0.07);
+}
+
+.name-badge-icon {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.name-badge-label {
+  font-family: "Cinzel", serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+}
+
+.name-badge-number {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.name-badge.name-badge .name-badge-number {
+  color: var(--gold-light);
+}
+
+.name-badge.soul-badge .name-badge-number {
+  color: #7ceba0;
+}
+
+.name-badge.pers-badge .name-badge-number {
+  color: #6090c0;
+}
+
+.name-badge-title {
+  font-family: "Cinzel", serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.name-badge.name-badge .name-badge-title {
+  color: var(--gold);
+}
+
+.name-badge.soul-badge .name-badge-title {
+  color: #7ceba0;
+}
+
+.name-badge.pers-badge .name-badge-title {
+  color: #6090c0;
+}
+
+.name-badge-planet {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.name-badge-desc {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.name-reference-details {
+  margin-top: 16px;
+}
+
+.name-reference-summary {
+  font-family: "Cinzel", serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--gold-dim);
+  text-transform: uppercase;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.name-reference-summary::-webkit-details-marker {
+  display: none;
+}
+
+.name-reference-summary::before {
+  content: "\25B6";
+  font-size: 0.6rem;
+  transition: transform 0.3s;
+}
+
+.name-reference-details[open] .name-reference-summary::before {
+  transform: rotate(90deg);
+}
+
+.pyth-table-wrap {
+  margin-top: 16px;
+  overflow-x: auto;
+}
+
+.pyth-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.pyth-table th {
+  font-family: "Cinzel", serif;
+  font-size: 0.72rem;
+  color: var(--gold);
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+  letter-spacing: 0.1em;
+}
+
+.pyth-table td {
+  padding: 6px 10px;
+  color: var(--text-dim);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.pyth-number {
+  font-family: "Cinzel Decorative", serif;
+  color: var(--gold-light);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.pyth-letter {
+  font-family: "Cinzel Decorative", serif;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  margin-right: 8px;
+}
+
+.pyth-letter.is-vowel {
+  color: var(--gold);
+}
+
+.pyth-table-note {
+  margin-top: 10px;
+  font-size: 0.76rem;
+  font-style: italic;
+  color: var(--text-dim);
+}
+
+@media (max-width: 500px) {
+  .name-num-badge {
+    min-width: 100%;
+  }
+}

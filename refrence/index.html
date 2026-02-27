@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cosmic Numbers — Vedic Numerology Luck Oracle</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Starfield background (populated by JS) -->
+  <div id="stars"></div>
+
+  <div class="container">
+
+    <!-- ── HEADER ──────────────────────────────────────── -->
+    <header>
+      <span class="crown-symbol">☽ ✦ ☾</span>
+      <h1>Cosmic Numbers</h1>
+      <div class="divider"><span>✦</span></div>
+      <p>Unveil the numerological destiny encoded in your birth</p>
+    </header>
+
+    <div class="zodiac-strip">♈ ♉ ♊ ♋ ♌ ♍ ♎ ♏ ♐ ♑ ♒ ♓</div>
+
+    <!-- ── INPUT CARD ───────────────────────────────────── -->
+    <div class="card">
+      <div class="card-title">✦ Your Birth Data</div>
+
+      <label for="dob">Date of Birth</label>
+      <div class="date-input-wrap">
+        <input
+          type="text"
+          id="dob"
+          placeholder="DD / MM / YYYY"
+          maxlength="14"
+          autocomplete="off"
+          inputmode="numeric"
+        />
+        <span class="date-icon">📅</span>
+      </div>
+      <span class="date-error" id="dob-error"></span>
+
+      <!-- Chosen number — hidden until valid DOB entered -->
+      <div id="chosen-section" style="display:none;">
+        <label for="chosen">
+          Your Chosen Number
+          <span style="color:var(--text-dim); font-style:italic; font-size:0.85em; text-transform:none;">
+            (any number — will be reduced to single digit)
+          </span>
+        </label>
+        <input
+          type="number"
+          id="chosen"
+          placeholder="e.g. 47"
+          min="1"
+          max="9999"
+        />
+      </div>
+    </div>
+
+    <!-- ── ORACLE BUTTON ────────────────────────────────── -->
+    <button class="btn" id="oracle-btn" disabled>✦ Check My Luck ✦</button>
+    <p class="info-text">The cosmos will generate a sacred number to test your fortune</p>
+
+    <!-- ── RESULT SECTION (hidden until oracle runs) ────── -->
+    <div id="oracle-section">
+      <div class="card" id="result-card">
+        <div class="card-title">✦ Oracle Speaks</div>
+
+        <!-- Random & Today numbers -->
+        <div class="result-numbers-row">
+          <div class="num-badge active result-num-badge">
+            <div class="label">🎲 Random Number</div>
+            <div class="value" id="lucky-num">—</div>
+            <div class="meaning">Cosmic number generated</div>
+          </div>
+          <div class="num-badge active result-num-badge">
+            <div class="label">📅 Today's Number</div>
+            <div class="value" id="today-num-display">—</div>
+            <div class="meaning">Today's date digit reduced</div>
+          </div>
+        </div>
+
+        <!-- Part scores -->
+        <div class="score-row">
+          <div class="score-box">
+            <div class="score-label">Your Number Score</div>
+            <div class="score-value" id="part1-score">—</div>
+            <div class="score-weight">50% weight</div>
+          </div>
+          <div class="score-box">
+            <div class="score-label">Random Score</div>
+            <div class="score-value" id="part2-score">—</div>
+            <div class="score-weight">50% weight</div>
+          </div>
+        </div>
+
+        <!-- Luck scale meter -->
+        <div class="luck-meter-wrap">
+          <div class="luck-meter-label">
+            <span>Luck Scale</span>
+            <span id="luck-scale-label">—</span>
+          </div>
+          <div class="luck-meter-track">
+            <div class="luck-meter-fill" id="luck-fill"></div>
+          </div>
+          <div class="luck-scale" id="luck-scale-big"></div>
+        </div>
+
+        <!-- Verdict banner -->
+        <div class="verdict-banner" id="verdict-banner">
+          <span class="verdict-emoji"  id="verdict-emoji"></span>
+          <div  class="verdict-title"  id="verdict-title"></div>
+          <div  class="verdict-hindi"  id="verdict-hindi"></div>
+          <div  class="verdict-cat"    id="verdict-cat"></div>
+          <div  class="verdict-desc"   id="verdict-desc"></div>
+        </div>
+
+        <!-- Match breakdown -->
+        <div class="breakdown-heading">✦ Match Breakdown</div>
+        <div class="match-grid" id="match-grid"></div>
+
+        <button class="reset-btn" onclick="resetOracle()">↺ Consult Again</button>
+      </div>
+
+      <!-- Numerology Reference Table -->
+      <div class="card">
+        <details>
+          <summary>Vedic Numerology Compatibility Reference</summary>
+          <p style="margin-top:14px; font-style:italic; color:var(--text-dim); font-size:0.9rem; margin-bottom:12px;">
+            Based on Astro Pankaj Seth's Vedic Numerology system — each number carries a
+            planetary vibration that determines friendship, neutrality, or enmity.
+          </p>
+          <table class="num-table" id="compat-table"></table>
+        </details>
+      </div>
+
+    </div><!-- /#oracle-section -->
+
+  </div><!-- /.container -->
+
+  <!-- App Logic -->
+  <script src="js/app.js"></script>
+
+</body>
+</html>

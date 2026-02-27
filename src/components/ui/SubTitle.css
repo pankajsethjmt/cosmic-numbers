@@ -1,0 +1,7 @@
+.ui-subtitle {
+  margin-top: 12px;
+  color: var(--text-dim);
+  font-size: 1.1rem;
+  font-style: italic;
+  letter-spacing: 0.08em;
+}

@@ -1,0 +1,60 @@
+.result-verdict-banner {
+  text-align: center;
+  padding: 24px 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  border: 1px solid;
+  position: relative;
+  overflow: hidden;
+}
+
+.result-verdict-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  background: currentColor;
+}
+
+.result-verdict-emoji {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.result-verdict-title {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.result-verdict-hindi {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin: 4px 0;
+  font-family: "EB Garamond", serif;
+}
+
+.result-verdict-cat {
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  margin: 6px 0;
+}
+
+.result-verdict-desc {
+  font-size: 1rem;
+  font-style: italic;
+  opacity: 0.85;
+  max-width: 420px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+@media (max-width: 500px) {
+  .result-verdict-title {
+    font-size: 1.2rem;
+  }
+}

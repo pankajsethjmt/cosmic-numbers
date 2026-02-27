@@ -1,0 +1,50 @@
+.result-luck-meter-wrap {
+  margin: 28px 0;
+}
+
+.result-luck-meter-label {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Cinzel", serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.result-luck-meter-track {
+  height: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 100px;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  overflow: hidden;
+}
+
+.result-luck-meter-fill {
+  height: 100%;
+  border-radius: 100px;
+  width: 0;
+  transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+}
+
+.result-luck-meter-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3));
+  border-radius: 100px;
+}
+
+.result-luck-scale {
+  text-align: right;
+  font-family: "Cinzel Decorative", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 12px;
+  line-height: 1;
+}

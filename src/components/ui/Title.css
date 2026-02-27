@@ -1,0 +1,17 @@
+.ui-title {
+  font-family: "Cinzel Decorative", serif;
+  font-size: clamp(1.6rem, 5vw, 2.8rem);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold), #a06820);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (max-width: 500px) {
+  .ui-title {
+    font-size: 1.5rem;
+  }
+}
