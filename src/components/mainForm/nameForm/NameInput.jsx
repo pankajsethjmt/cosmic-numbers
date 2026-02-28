@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { calcNameNumbers } from "../../../utils/nameNumerology";
 
 import FormInput from "../../ui/FormInput";
@@ -10,28 +10,23 @@ export default function NameInput({ onValidName }) {
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState("");
 
-  useEffect(() => {
-    const cleaned = name.replace(/[^a-zA-Z]/g, "");
+  function handleNameChange(e) {
+    const value = e.target.value.slice(0, MAX_NAME_LENGTH);
+    setName(value);
 
-    if (name.length > MAX_NAME_LENGTH) {
-      setNameError(`Name cannot exceed ${MAX_NAME_LENGTH} characters.`);
+    const cleaned = value.replace(/[^a-zA-Z]/g, "");
+    if (cleaned.length >= 2) {
+      onValidName({
+        name: value.trim(),
+        numerology: calcNameNumbers(value),
+      });
+      setNameError("");
       return;
     }
 
-    if (cleaned.length >= 2) {
-      const numerology = calcNameNumbers(name);
-
-      onValidName({
-        name: name.trim(),
-        numerology,
-      });
-
-      setNameError("");
-    } else {
-      onValidName(null);
-      setNameError("");
-    }
-  }, [name, onValidName]);
+    onValidName(null);
+    setNameError("");
+  }
 
   return (
     <>
@@ -39,10 +34,11 @@ export default function NameInput({ onValidName }) {
       <FormInput
         id="main-name-input"
         type="text"
-        name={name}
-        onChange={(e) => setName(e.target.value.slice(0, MAX_NAME_LENGTH))}
+        value={name}
+        onChange={handleNameChange}
         placeholder="e.g. Pankaj Seth"
         autoComplete="name"
+        maxLength={MAX_NAME_LENGTH}
       />
       {nameError && <p className="input-form-date-error">{nameError}</p>}
     </>

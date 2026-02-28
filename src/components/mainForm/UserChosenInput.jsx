@@ -14,14 +14,13 @@ export default function UserChosenInput({ onValidChosen }) {
       onValidChosen(null);
       return;
     }
-    const generatedRandom = Math.ceil(Math.random() * 9);
 
     const reducedChosen = reduce(Number(value));
 
     onValidChosen({
       raw: value,
+      chosen: reducedChosen,
       reduced: reducedChosen,
-      random: generatedRandom,
     });
   }
 
@@ -34,8 +33,8 @@ export default function UserChosenInput({ onValidChosen }) {
         value={chosen}
         onChange={handleRandomChange}
         placeholder="e.g. 47"
-        maxvalue={999}
-        minvalue={1}
+        min={1}
+        max={999}
       />
     </>
   );

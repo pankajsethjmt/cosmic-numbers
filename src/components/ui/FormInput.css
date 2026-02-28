@@ -24,3 +24,13 @@
 .ui-form-input::placeholder {
   color: var(--text-dim);
 }
+
+.ui-form-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.ui-form-input[type="number"]::-webkit-outer-spin-button,
+.ui-form-input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

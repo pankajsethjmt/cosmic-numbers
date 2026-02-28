@@ -51,8 +51,9 @@ export function getCompatibilityReference() {
 }
 // Main calculation for the oracle result.
 
-export function calcLuck({ root, fortune, chosen, random }) {
+export function calcLuck({ root, fortune, chosen }) {
   const today = getTodayNumber();
+  const random = Math.ceil(Math.random() * 9);
 
   const targetValues = {
     root,

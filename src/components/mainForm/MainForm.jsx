@@ -16,30 +16,38 @@ const STAR_SYMBOL = String.fromCodePoint(0x2726);
 export default function MainForm({ onResult }) {
   const [nameData, setNameData] = useState(null);
   const [dobData, setDobData] = useState(null);
-  const [randomChosen, setRandomChosen] = useState(null);
 
-  const canSubmit = Boolean(nameData && dobData && randomChosen);
+  const [chosenData, setChosenData] = useState(null);
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (!canSubmit) return;
+  const canSubmit =
+    nameData !== null && dobData !== null && chosenData !== null;
 
+  function buildLuckResult() {
     const { root, fortune } = dobData;
-    const { chosen, random, raw } = randomChosen;
+    const { chosen, raw } = chosenData;
 
     const luck = calcLuck({
       root,
       fortune,
       chosen,
-      random,
     });
 
-    onResult({
+    return {
       ...luck,
       fullName: nameData.name,
       clientRandom: raw,
       nameNumerology: nameData.numerology,
-    });
+    };
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!nameData || !dobData || !chosenData) return;
+
+    const buildResult = buildLuckResult();
+
+    onResult(buildResult);
   }
 
   return (
@@ -49,17 +57,9 @@ export default function MainForm({ onResult }) {
 
         <NameInput onValidName={setNameData} />
 
-        {nameData && (
-          <>
-            <DobInput onValidDob={setDobData} />
-          </>
-        )}
+        {nameData && <DobInput onValidDob={setDobData} />}
 
-        {dobData && (
-          <>
-            <UserChosenInput onValidChosen={setRandomChosen} />
-          </>
-        )}
+        {dobData && <UserChosenInput onValidChosen={setChosenData} />}
       </Card>
 
       <Button type="submit" disabled={!canSubmit}>
