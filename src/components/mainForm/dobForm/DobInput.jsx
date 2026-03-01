@@ -46,6 +46,7 @@ export default function DobInput({ onValidDob }) {
         year: yyyy,
         root: dobResult.root,
         fortune: dobResult.fortune,
+        sunSign: dobResult.sunSign,
       });
 
       return;

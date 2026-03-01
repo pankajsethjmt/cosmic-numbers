@@ -1,0 +1,205 @@
+/* ============================================================
+   SunSignCard.css — Vedic Sun Sign Card styles
+   Matches existing ui-card patterns
+   ============================================================ */
+
+/* ── MAIN CARD ────────────────────────────────────────────── */
+.sun-sign-card {
+  border-radius:  16px;
+  padding:        28px 24px;
+  position:       relative;
+  overflow:       hidden;
+  border:         1px solid rgba(201, 168, 76, 0.25);
+  background:     linear-gradient(135deg, rgba(26,18,53,0.9), rgba(13,8,32,0.95));
+  backdrop-filter: blur(10px);
+  box-shadow:     0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(201,168,76,0.1);
+  animation:      sunSignReveal 0.6s ease-out both;
+}
+
+@keyframes sunSignReveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.sun-sign-card::before {
+  content:    "";
+  position:   absolute;
+  top: 0; left: 0; right: 0;
+  height:     2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* ── HEADER ROW ───────────────────────────────────────────── */
+.sun-sign-header {
+  display:        flex;
+  align-items:    center;
+  gap:            16px;
+  margin-bottom:  20px;
+}
+
+.sun-sign-symbol {
+  font-size:   3.5rem;
+  line-height: 1;
+  filter:      drop-shadow(0 0 12px rgba(201,168,76,0.5));
+  animation:   symbolFloat 4s ease-in-out infinite;
+}
+
+@keyframes symbolFloat {
+  0%, 100% { transform: translateY(0);   }
+  50%       { transform: translateY(-5px); }
+}
+
+.sun-sign-names {
+  flex: 1;
+}
+
+.sun-sign-name-en {
+  font-family:    "Cinzel Decorative", serif;
+  font-size:      1.6rem;
+  font-weight:    700;
+  background:     linear-gradient(135deg, var(--gold-light), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height:    1.1;
+}
+
+.sun-sign-name-hi {
+  font-family:   "EB Garamond", serif;
+  font-size:     1.2rem;
+  color:         var(--text-dim);
+  margin-top:    4px;
+  font-style:    italic;
+}
+
+.sun-sign-date-range {
+  font-family:    "Cinzel", serif;
+  font-size:      0.72rem;
+  letter-spacing: 0.1em;
+  color:          var(--gold-dim);
+  text-transform: uppercase;
+  margin-top:     6px;
+}
+
+/* ── INFO PILLS ROW ───────────────────────────────────────── */
+.sun-sign-pills {
+  display:   flex;
+  gap:       10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.sun-sign-pill {
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  flex:           1;
+  min-width:      100px;
+  padding:        12px 10px;
+  border-radius:  10px;
+  border:         1px solid rgba(201,168,76,0.2);
+  background:     rgba(201,168,76,0.05);
+  text-align:     center;
+}
+
+.pill-label {
+  font-family:    "Cinzel", serif;
+  font-size:      0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:          var(--gold-dim);
+  margin-bottom:  6px;
+}
+
+.pill-value-en {
+  font-family: "Cinzel", serif;
+  font-size:   0.88rem;
+  font-weight: 600;
+  color:       var(--gold-light);
+  line-height: 1.2;
+}
+
+.pill-value-hi {
+  font-family: "EB Garamond", serif;
+  font-size:   0.9rem;
+  color:       var(--text-dim);
+  font-style:  italic;
+  margin-top:  3px;
+}
+
+/* Ruling number pill — special highlight */
+.sun-sign-pill.ruling-number-pill {
+  border-color: rgba(240,208,128,0.45);
+  background:   rgba(240,208,128,0.08);
+}
+
+.ruling-number-big {
+  font-family: "Cinzel Decorative", serif;
+  font-size:   2rem;
+  font-weight: 700;
+  color:       var(--gold-light);
+  line-height: 1;
+  filter:      drop-shadow(0 0 8px rgba(201,168,76,0.4));
+}
+
+/* Element pill colors */
+.sun-sign-pill.element-fire   { border-color: rgba(240,100,80,0.4);  background: rgba(240,100,80,0.06);  }
+.sun-sign-pill.element-earth  { border-color: rgba(100,180,80,0.4);  background: rgba(100,180,80,0.06);  }
+.sun-sign-pill.element-air    { border-color: rgba(96,144,192,0.4);  background: rgba(96,144,192,0.06);  }
+.sun-sign-pill.element-water  { border-color: rgba(80,160,220,0.4);  background: rgba(80,160,220,0.06);  }
+
+.element-fire  .pill-value-en { color: #f09060; }
+.element-earth .pill-value-en { color: #80c860; }
+.element-air   .pill-value-en { color: #6090c0; }
+.element-water .pill-value-en { color: #50a0dc; }
+
+/* ── DESCRIPTION SECTION ──────────────────────────────────── */
+.sun-sign-desc-wrap {
+  border-top:  1px solid rgba(201,168,76,0.1);
+  padding-top: 16px;
+}
+
+.sun-sign-desc-block {
+  margin-bottom: 12px;
+}
+
+.sun-sign-desc-block:last-child { margin-bottom: 0; }
+
+.sun-sign-desc-lang {
+  font-family:    "Cinzel", serif;
+  font-size:      0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color:          var(--gold-dim);
+  margin-bottom:  6px;
+  display:        flex;
+  align-items:    center;
+  gap:            6px;
+}
+
+.sun-sign-desc-lang::after {
+  content:    "";
+  flex:       1;
+  height:     1px;
+  background: linear-gradient(90deg, rgba(201,168,76,0.2), transparent);
+}
+
+.sun-sign-desc-text {
+  font-family: "EB Garamond", serif;
+  font-size:   1rem;
+  color:       var(--text);
+  line-height: 1.7;
+  opacity:     0.9;
+}
+
+.sun-sign-desc-text.hindi {
+  font-size: 1.05rem;
+  color:     var(--text-dim);
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 500px) {
+  .sun-sign-name-en   { font-size: 1.3rem; }
+  .sun-sign-pill      { min-width: 80px;   }
+  .ruling-number-big  { font-size: 1.6rem; }
+}

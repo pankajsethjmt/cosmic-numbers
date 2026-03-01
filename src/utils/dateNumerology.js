@@ -1,4 +1,5 @@
 import { reduce, sumDigits } from "./calFunction";
+import { getSunSign } from "./sunSign";
 
 // Get today's reduced number.
 
@@ -28,8 +29,9 @@ export function getUniversalDayNumber() {
 // Calculate birth root and fortune numbers.
 
 export function calcDOB(dd, mm, yyyy) {
-  console.log("Calculating DOB with:", { dd, mm, yyyy });
   const root = reduce(dd);
   const fortune = reduce(sumDigits(dd + mm + yyyy));
-  return { root, fortune };
+  const sunSign = getSunSign(dd, mm);
+  console.log("DOB Calculation:", { dd, mm, yyyy, root, fortune, sunSign });
+  return { root, fortune, sunSign };
 }

@@ -6,6 +6,7 @@ import MatchBreakdown from "./MatchBreakdown";
 import ResultBadge from "./ResultBadge";
 import ScoreRow from "./ScoreRow";
 import Verdict from "./Verdict";
+import SunSignCard from "../sunSign/SunSignCard";
 import { VERDICT } from "../../data/verdict";
 import "./Result.css";
 
@@ -17,6 +18,7 @@ const WARNING_SYMBOL = String.fromCodePoint(0x26a0);
 const BALANCE_SYMBOL = String.fromCodePoint(0x262f);
 const SPARKLES_SYMBOL = String.fromCodePoint(0x2728);
 const GLOWING_STAR_SYMBOL = String.fromCodePoint(0x1f31f);
+const SUN_SYMBOL = String.fromCodePoint(0x2609);
 
 function getVerdictMeta(scale) {
   if (scale <= 3) {
@@ -33,6 +35,7 @@ function getVerdictMeta(scale) {
 
 export default function Result({ result, onReset }) {
   if (!result) return null;
+  console.log("Rendering Result with:", result);
 
   const verdict = VERDICT[result.scale];
   const verdictMeta = getVerdictMeta(result.scale);
@@ -46,7 +49,9 @@ export default function Result({ result, onReset }) {
         <CardTitle>{STAR_SYMBOL} Oracle Speaks</CardTitle>
         {result.nameNumerology && (
           <>
-            <div className="result-breakdown-heading">{STAR_SYMBOL} Name Result</div>
+            <div className="result-breakdown-heading">
+              {STAR_SYMBOL} Name Result
+            </div>
             {result.fullName && (
               <div className="result-name-line">{result.fullName}</div>
             )}
@@ -67,7 +72,10 @@ export default function Result({ result, onReset }) {
           />
         </div>
 
-        <ScoreRow part1Score={result.part1Score} part2Score={result.part2Score} />
+        <ScoreRow
+          part1Score={result.part1Score}
+          part2Score={result.part2Score}
+        />
 
         <LuckMeter scale={result.scale} color={verdict.color} />
         <Verdict verdict={verdict} meta={verdictMeta} />
@@ -81,6 +89,11 @@ export default function Result({ result, onReset }) {
 
       <Card>
         <CompatibilityReference rows={result.compatibility} />
+      </Card>
+
+      <Card>
+        <CardTitle>{SUN_SYMBOL} Vedic Sun Sign — Janma Rashi</CardTitle>
+        <SunSignCard sunSign={result.sunSign} />
       </Card>
     </section>
   );

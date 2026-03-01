@@ -18,6 +18,7 @@ export default function InputForm({ onResult }) {
     root: null,
     fortune: null,
     chosen: null,
+    sunSign: null,
   });
 
   function handleDOB(e) {
@@ -40,11 +41,13 @@ export default function InputForm({ onResult }) {
       const yyyy = value.slice(4);
 
       const res = calcDOB(dd, mm, yyyy);
+      console.log("DOB Calculation Result:", res);
 
       setData((prev) => ({
         ...prev,
         root: res.root,
         fortune: res.fortune,
+        sunSign: res.sunSign,
       }));
 
       setValid(true);
@@ -54,6 +57,7 @@ export default function InputForm({ onResult }) {
         ...prev,
         root: null,
         fortune: null,
+        sunSign: null,
       }));
     }
   }
