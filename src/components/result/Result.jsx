@@ -7,6 +7,7 @@ import ResultBadge from "./ResultBadge";
 import ScoreRow from "./ScoreRow";
 import Verdict from "./Verdict";
 import SunSignCard from "../sunSign/SunSignCard";
+import RootNumberCard from "../rootNumber/RootNumberCard";
 import { VERDICT } from "../../data/verdict";
 import "./Result.css";
 
@@ -19,6 +20,7 @@ const BALANCE_SYMBOL = String.fromCodePoint(0x262f);
 const SPARKLES_SYMBOL = String.fromCodePoint(0x2728);
 const GLOWING_STAR_SYMBOL = String.fromCodePoint(0x1f31f);
 const SUN_SYMBOL = String.fromCodePoint(0x2609);
+const ROOT_SYMBOL = String.fromCodePoint(0x2736);
 
 function getVerdictMeta(scale) {
   if (scale <= 3) {
@@ -94,6 +96,10 @@ export default function Result({ result, onReset }) {
       <Card>
         <CardTitle>{SUN_SYMBOL} Vedic Sun Sign — Janma Rashi</CardTitle>
         <SunSignCard sunSign={result.sunSign} />
+      </Card>
+      <Card>
+        <CardTitle>{ROOT_SYMBOL} Birth Root Number</CardTitle>
+        <RootNumberCard rootData={result.rootData} />
       </Card>
     </section>
   );

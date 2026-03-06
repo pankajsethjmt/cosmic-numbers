@@ -1,0 +1,434 @@
+/* ============================================================
+   RootNumberCard.css — Root Number Card styles
+   Mirrors SunSignCard.css pattern exactly
+   ============================================================ */
+
+/* ── MAIN CARD ────────────────────────────────────────────── */
+.rn-card {
+  border-radius:   16px;
+  padding:         28px 24px;
+  position:        relative;
+  overflow:        hidden;
+  border:          1px solid rgba(201, 168, 76, 0.25);
+  background:      linear-gradient(135deg, rgba(26,18,53,0.9), rgba(13,8,32,0.95));
+  backdrop-filter: blur(10px);
+  box-shadow:      0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(201,168,76,0.1);
+  animation:       rnReveal 0.6s ease-out both;
+}
+
+@keyframes rnReveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.rn-card::before {
+  content:    "";
+  position:   absolute;
+  top: 0; left: 0; right: 0;
+  height:     2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* ── HEADER ROW ───────────────────────────────────────────── */
+.rn-header {
+  display:       flex;
+  align-items:   center;
+  gap:           16px;
+  margin-bottom: 20px;
+}
+
+.rn-number-symbol {
+  font-family: "Cinzel Decorative", serif;
+  font-size:   4rem;
+  font-weight: 900;
+  line-height: 1;
+  background:  linear-gradient(135deg, var(--gold-light), var(--gold), #a06820);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip:         text;
+  filter:      drop-shadow(0 0 12px rgba(201,168,76,0.5));
+  animation:   rnFloat 4s ease-in-out infinite;
+  flex-shrink: 0;
+  width:       70px;
+  text-align:  center;
+}
+
+@keyframes rnFloat {
+  0%, 100% { transform: translateY(0);    }
+  50%       { transform: translateY(-5px); }
+}
+
+.rn-names { flex: 1; }
+
+.rn-name-en {
+  font-family:             "Cinzel Decorative", serif;
+  font-size:               1.5rem;
+  font-weight:             700;
+  background:              linear-gradient(135deg, var(--gold-light), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip:         text;
+  line-height:             1.1;
+}
+
+.rn-name-hi {
+  font-family: "EB Garamond", serif;
+  font-size:   1.2rem;
+  color:       var(--text-dim);
+  margin-top:  4px;
+  font-style:  italic;
+}
+
+.rn-core-nature {
+  font-family:    "Cinzel", serif;
+  font-size:      0.68rem;
+  letter-spacing: 0.08em;
+  color:          var(--gold-dim);
+  text-transform: uppercase;
+  margin-top:     6px;
+  line-height:    1.5;
+}
+
+/* ── INFO PILLS ROW ───────────────────────────────────────── */
+.rn-pills {
+  display:       flex;
+  gap:           10px;
+  flex-wrap:     wrap;
+  margin-bottom: 20px;
+}
+
+.rn-pill {
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  flex:           1;
+  min-width:      100px;
+  padding:        12px 10px;
+  border-radius:  10px;
+  border:         1px solid rgba(201,168,76,0.2);
+  background:     rgba(201,168,76,0.05);
+  text-align:     center;
+}
+
+.rn-pill-label {
+  font-family:    "Cinzel", serif;
+  font-size:      0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:          var(--gold-dim);
+  margin-bottom:  6px;
+}
+
+.rn-pill-value-en {
+  font-family: "Cinzel", serif;
+  font-size:   0.88rem;
+  font-weight: 600;
+  color:       var(--gold-light);
+  line-height: 1.2;
+}
+
+.rn-pill-value-hi {
+  font-family: "EB Garamond", serif;
+  font-size:   0.9rem;
+  color:       var(--text-dim);
+  font-style:  italic;
+  margin-top:  3px;
+}
+
+/* Ruling number pill — same as SunSignCard */
+.rn-pill.ruling-number-pill {
+  border-color: rgba(240,208,128,0.45);
+  background:   rgba(240,208,128,0.08);
+}
+
+.rn-ruling-number-big {
+  font-family: "Cinzel Decorative", serif;
+  font-size:   2rem;
+  font-weight: 700;
+  color:       var(--gold-light);
+  line-height: 1;
+  filter:      drop-shadow(0 0 8px rgba(201,168,76,0.4));
+}
+
+/* ── SHORT DESC ───────────────────────────────────────────── */
+.rn-short-desc-wrap {
+  display:       flex;
+  gap:           10px;
+  flex-wrap:     wrap;
+  margin-bottom: 20px;
+}
+
+.rn-short-box {
+  flex:          1;
+  min-width:     160px;
+  padding:       12px 16px;
+  border-radius: 10px;
+  border:        1px solid rgba(201,168,76,0.15);
+  background:    rgba(201,168,76,0.04);
+  font-family:   "EB Garamond", serif;
+  font-size:     1rem;
+  font-style:    italic;
+  line-height:   1.5;
+  color:         var(--gold-light);
+}
+
+.rn-short-box.hi {
+  color: var(--text-dim);
+}
+
+/* ── DESCRIPTION SECTION ──────────────────────────────────── */
+.rn-desc-wrap {
+  border-top:  1px solid rgba(201,168,76,0.1);
+  padding-top: 16px;
+  margin-bottom: 20px;
+}
+
+.rn-desc-block        { margin-bottom: 14px; }
+.rn-desc-block:last-child { margin-bottom: 0; }
+
+.rn-desc-lang {
+  font-family:    "Cinzel", serif;
+  font-size:      0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color:          var(--gold-dim);
+  margin-bottom:  6px;
+  display:        flex;
+  align-items:    center;
+  gap:            6px;
+}
+
+.rn-desc-lang::after {
+  content:    "";
+  flex:       1;
+  height:     1px;
+  background: linear-gradient(90deg, rgba(201,168,76,0.2), transparent);
+}
+
+.rn-desc-text {
+  font-family: "EB Garamond", serif;
+  font-size:   1rem;
+  color:       var(--text);
+  line-height: 1.75;
+  opacity:     0.9;
+  white-space: pre-line;
+}
+
+.rn-desc-text.hindi {
+  font-size: 1.05rem;
+  color:     var(--text-dim);
+}
+
+/* ── TRAITS ROW ───────────────────────────────────────────── */
+.rn-traits-row {
+  display:       flex;
+  gap:           10px;
+  flex-wrap:     wrap;
+  margin-bottom: 20px;
+}
+
+.rn-traits-box {
+  flex:          1;
+  min-width:     140px;
+  padding:       14px;
+  border-radius: 10px;
+  border:        1px solid rgba(124,235,160,0.25);
+  background:    rgba(124,235,160,0.05);
+}
+
+.rn-traits-box.caution {
+  border-color: rgba(240,120,120,0.25);
+  background:   rgba(240,120,120,0.05);
+}
+
+.rn-traits-title {
+  font-family:    "Cinzel", serif;
+  font-size:      0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:          #7ceba0;
+  margin-bottom:  10px;
+}
+
+.rn-traits-box.caution .rn-traits-title { color: #f07878; }
+
+.rn-trait-tag {
+  display:       inline-block;
+  padding:       3px 10px;
+  border-radius: 100px;
+  font-family:   "Cinzel", serif;
+  font-size:     0.62rem;
+  margin:        3px 3px 0 0;
+  background:    rgba(124,235,160,0.1);
+  color:         #7ceba0;
+  border:        1px solid rgba(124,235,160,0.2);
+}
+
+.rn-traits-box.caution .rn-trait-tag {
+  background: rgba(240,120,120,0.1);
+  color:      #f07878;
+  border:     1px solid rgba(240,120,120,0.2);
+}
+
+/* ── LUCKY INFO GRID ──────────────────────────────────────── */
+.rn-lucky-grid {
+  display:               grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:                   10px;
+  margin-bottom:         20px;
+}
+
+@media (max-width: 480px) {
+  .rn-lucky-grid { grid-template-columns: 1fr; }
+}
+
+.rn-lucky-box {
+  padding:       12px 14px;
+  border-radius: 10px;
+  border:        1px solid rgba(201,168,76,0.15);
+  background:    rgba(255,255,255,0.02);
+}
+
+.rn-lucky-box.full-width { grid-column: 1 / -1; }
+
+.rn-lucky-label {
+  font-family:    "Cinzel", serif;
+  font-size:      0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:          var(--gold-dim);
+  margin-bottom:  8px;
+}
+
+.rn-tag-row {
+  display:   flex;
+  flex-wrap: wrap;
+  gap:       5px;
+}
+
+.rn-tag {
+  display:       inline-block;
+  padding:       3px 10px;
+  border-radius: 100px;
+  font-family:   "EB Garamond", serif;
+  font-size:     0.85rem;
+  background:    rgba(201,168,76,0.07);
+  color:         var(--text-dim);
+  border:        1px solid rgba(201,168,76,0.15);
+}
+
+.rn-tag.number {
+  font-family: "Cinzel Decorative", serif;
+  font-size:   1rem;
+  font-weight: 700;
+  color:       var(--gold-light);
+  background:  rgba(201,168,76,0.1);
+  border-color: rgba(201,168,76,0.35);
+  padding:     4px 12px;
+}
+
+.rn-tag.health {
+  color:        #f09090;
+  border-color: rgba(240,120,120,0.2);
+  background:   rgba(240,120,120,0.06);
+}
+
+/* ── STONE SECTION ────────────────────────────────────────── */
+.rn-stone-wrap {
+  border-top:  1px solid rgba(201,168,76,0.1);
+  padding-top: 16px;
+}
+
+.rn-stone-main {
+  display:       flex;
+  align-items:   center;
+  gap:           14px;
+  margin-bottom: 14px;
+  padding:       14px;
+  border-radius: 10px;
+  border:        1px solid rgba(201,168,76,0.3);
+  background:    rgba(201,168,76,0.07);
+}
+
+.rn-stone-gem {
+  font-size:   2.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.rn-stone-info { flex: 1; }
+
+.rn-stone-label {
+  font-family:    "Cinzel", serif;
+  font-size:      0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:          var(--gold-dim);
+  margin-bottom:  4px;
+}
+
+.rn-stone-name-en {
+  font-family: "Cinzel Decorative", serif;
+  font-size:   1.1rem;
+  font-weight: 700;
+  color:       var(--gold-light);
+  line-height: 1.2;
+}
+
+.rn-stone-name-hi {
+  font-family: "EB Garamond", serif;
+  font-size:   1rem;
+  color:       var(--text-dim);
+  font-style:  italic;
+  margin-top:  2px;
+}
+
+.rn-other-stones-label {
+  font-family:    "Cinzel", serif;
+  font-size:      0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:          var(--gold-dim);
+  margin-bottom:  8px;
+  display:        flex;
+  align-items:    center;
+  gap:            6px;
+}
+
+.rn-other-stones-label::after {
+  content:    "";
+  flex:       1;
+  height:     1px;
+  background: linear-gradient(90deg, rgba(201,168,76,0.2), transparent);
+}
+
+.rn-other-stones {
+  display:   flex;
+  flex-wrap: wrap;
+  gap:       6px;
+}
+
+.rn-stone-tag {
+  padding:       4px 12px;
+  border-radius: 100px;
+  font-family:   "EB Garamond", serif;
+  font-size:     0.85rem;
+  color:         var(--text-dim);
+  background:    rgba(201,168,76,0.05);
+  border:        1px solid rgba(201,168,76,0.15);
+}
+
+.rn-stone-tag .stone-hi {
+  font-style: italic;
+  opacity:    0.7;
+  margin-left: 4px;
+  font-size:  0.8rem;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 500px) {
+  .rn-name-en        { font-size: 1.2rem; }
+  .rn-number-symbol  { font-size: 3rem; width: 55px; }
+  .rn-pill           { min-width: 80px; }
+  .rn-ruling-number-big { font-size: 1.6rem; }
+}

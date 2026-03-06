@@ -1,5 +1,6 @@
 import { reduce, sumDigits } from "./calFunction";
 import { getSunSign } from "./sunSign";
+import { getRootNumber } from "./rootNumber";
 
 // Get today's reduced number.
 
@@ -32,6 +33,15 @@ export function calcDOB(dd, mm, yyyy) {
   const root = reduce(dd);
   const fortune = reduce(sumDigits(dd + mm + yyyy));
   const sunSign = getSunSign(dd, mm);
-  console.log("DOB Calculation:", { dd, mm, yyyy, root, fortune, sunSign });
-  return { root, fortune, sunSign };
+  const rootData = getRootNumber(root);
+  console.log("DOB Calculation:", {
+    dd,
+    mm,
+    yyyy,
+    root,
+    fortune,
+    sunSign,
+    rootData,
+  });
+  return { root, fortune, sunSign, rootData };
 }

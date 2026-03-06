@@ -23,7 +23,7 @@ export default function MainForm({ onResult }) {
     nameData !== null && dobData !== null && chosenData !== null;
 
   function buildLuckResult() {
-    const { root, fortune, sunSign } = dobData;
+    const { root, fortune, sunSign, rootData } = dobData;
     const { chosen, raw } = chosenData;
     console.log("Building luck result with:", {
       nameData,
@@ -43,6 +43,7 @@ export default function MainForm({ onResult }) {
       clientRandom: raw,
       nameNumerology: nameData.numerology,
       sunSign: sunSign,
+      rootData: rootData,
     };
   }
 
