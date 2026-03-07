@@ -5,8 +5,16 @@ export const DOB_NUMBERS = [
     symbol: "1",
     name: "Date of Birth 1",
     rulingPlanet: "Sun",
-    shortDesc: "Strong individuality, leadership, and visible personal authority.",
-    fullDesc: "You usually carry strong self-belief and prefer moving independently in life. Leadership often appears naturally in your decisions and actions. Respect and recognition remain important for inner satisfaction. You may dislike outside control when your vision feels clear. Balanced confidence usually helps you create strong personal impact.",
+    shortDesc: "Strong individuality, leadership force, and natural authority shape this date.",
+    fullDesc: `People born on 1st usually carry strong self-confidence and a natural desire to move independently in life. They often prefer taking decisions on their own and dislike unnecessary control from others.
+
+Sun influence gives leadership quality, courage, and a visible personal presence. Such people often wish to remain in front and naturally attract responsibility.
+
+They usually develop strong determination and can stand firmly on their views even during difficult situations.
+
+At times pride, rigidity, or harsh reaction may appear when their authority is challenged.
+
+When balanced, this date gives confidence, influence, and success through personal effort.`,
     positiveTraits: ["Leadership", "Confidence", "Independence"],
     cautionTraits: ["Ego", "Rigidity", "Impatience"],
     career: ["Administration", "Government", "Leadership"],
@@ -24,8 +32,16 @@ export const DOB_NUMBERS = [
     symbol: "2",
     name: "Date of Birth 2",
     rulingPlanet: "Moon",
-    shortDesc: "Sensitive mind, emotional depth, and gentle behaviour.",
-    fullDesc: "You usually respond to life through feelings and emotional understanding. Relationships influence your decisions more deeply than others may notice. A soft nature often helps you connect with people naturally. Mood changes may affect clarity during important moments. Calm surroundings usually strengthen your inner balance.",
+    shortDesc: "Sensitivity, emotional depth, and soft human understanding dominate this date.",
+    fullDesc: `People born on 2nd usually carry softness in behaviour and emotional sensitivity in relationships. They often understand feelings quickly and react gently.
+
+Moon influence makes the mind imaginative, caring, and deeply responsive to surroundings.
+
+They usually value peace, support family bonds, and maintain emotional connection strongly.
+
+Sometimes mood changes, hesitation, or emotional hurt may disturb inner stability.
+
+When balanced, this date gives empathy, calmness, and emotional intelligence.`,
     positiveTraits: ["Sensitivity", "Kindness", "Supportive nature"],
     cautionTraits: ["Mood change", "Overtrust"],
     career: ["Creative work", "Travel", "Support roles"],
@@ -43,8 +59,16 @@ export const DOB_NUMBERS = [
     symbol: "3",
     name: "Date of Birth 3",
     rulingPlanet: "Jupiter",
-    shortDesc: "Wisdom, expression, and natural growth orientation.",
-    fullDesc: "You often move forward through knowledge, guidance, and structured effort. Respect and meaningful progress usually matter strongly in life. Your thinking often becomes mature with age and responsibility. High expectations may create pressure when results delay. Balanced discipline usually improves long-term success.",
+    shortDesc: "Wisdom, expression, and growth through knowledge become central here.",
+    fullDesc: `People born on 3rd usually carry a natural desire for growth, learning, and meaningful progress in life.
+
+Jupiter influence gives wisdom, advisory nature, and confidence in expression.
+
+They often value knowledge, social respect, and organised movement.
+
+Sometimes overexpectation or rigidity may appear when situations do not move as desired.
+
+When balanced, this date gives maturity, expansion, and respected influence.`,
     positiveTraits: ["Wisdom", "Guidance", "Responsibility"],
     cautionTraits: ["Rigidity", "Overexpectation"],
     career: ["Teaching", "Administration", "Advisory"],
@@ -62,8 +86,16 @@ export const DOB_NUMBERS = [
     symbol: "4",
     name: "Date of Birth 4",
     rulingPlanet: "Rahu",
-    shortDesc: "Different thinking, unusual ideas, and practical intensity.",
-    fullDesc: "You often think differently and notice possibilities others miss. Practical intelligence becomes stronger through unusual life experiences. Sudden changes may shape important decisions. Inner restlessness can appear when plans remain uncertain. Patience usually helps your originality become productive.",
+    shortDesc: "Original thinking, unusual ideas, and practical intensity define this date.",
+    fullDesc: `People born on 4th often think differently and do not always follow conventional patterns.
+
+Rahu influence gives unusual ideas, practical intelligence, and sudden mental activity.
+
+They usually work hard and often carry strong responsibility.
+
+Sometimes hidden stress, overthinking, or internal conflict may remain active.
+
+When balanced, this date gives originality and practical strength.`,
     positiveTraits: ["Original thinking", "Practical mind", "Bold ideas"],
     cautionTraits: ["Mental stress", "Restlessness"],
     career: ["Politics", "Design", "Computers"],
@@ -81,8 +113,16 @@ export const DOB_NUMBERS = [
     symbol: "5",
     name: "Date of Birth 5",
     rulingPlanet: "Mercury",
-    shortDesc: "Fast mind, communication skill, and adaptability.",
-    fullDesc: "You usually think quickly and adapt easily to changing situations. Communication often becomes one of your strongest advantages. New ideas and movement keep your mind active. Too many directions may reduce consistency. Clear focus usually improves practical success.",
+    shortDesc: "Fast intelligence, communication skill, and adaptability remain strong here.",
+    fullDesc: `People born on 5th usually think quickly and adapt rapidly to changing conditions.
+
+Mercury gives communication ability, intelligence, and curiosity.
+
+They often learn fast and handle multiple situations well.
+
+Sometimes restlessness or inconsistency may reduce focus.
+
+When balanced, this date gives sharp intellect and practical success.`,
     positiveTraits: ["Communication", "Fast thinking", "Adaptability"],
     cautionTraits: ["Restlessness", "Overthinking"],
     career: ["Writing", "Trading", "Banking"],
@@ -100,8 +140,16 @@ export const DOB_NUMBERS = [
     symbol: "6",
     name: "Date of Birth 6",
     rulingPlanet: "Venus",
-    shortDesc: "Charm, harmony, and attraction naturally appear in life.",
-    fullDesc: "You usually create comfort and harmony around yourself naturally. Relationships often influence major decisions strongly. Beauty, balance, and emotional warmth matter deeply. Attachment may increase when expectations become personal. Balanced choices usually support stable happiness.",
+    shortDesc: "Charm, harmony, and emotional attraction become natural qualities.",
+    fullDesc: `People born on 6th usually carry natural charm and pleasant social behaviour.
+
+Venus gives beauty, relationship awareness, and comfort orientation.
+
+They value harmony, aesthetics, and emotional warmth.
+
+Sometimes attachment or comfort dependency may become strong.
+
+When balanced, this date gives attraction, harmony, and stable relationships.`,
     positiveTraits: ["Charm", "Harmony", "Relationship skill"],
     cautionTraits: ["Attachment", "Luxury excess"],
     career: ["Fashion", "Finance", "Music"],
@@ -119,8 +167,16 @@ export const DOB_NUMBERS = [
     symbol: "7",
     name: "Date of Birth 7",
     rulingPlanet: "Ketu",
-    shortDesc: "Inner depth, intuition, and silent observation.",
-    fullDesc: "You usually observe deeply before trusting situations fully. Inner analysis often becomes stronger than outer expression. Spiritual curiosity or hidden thinking may remain active throughout life. Emotional distance can appear during pressure. Inner balance usually sharpens intuition further.",
+    shortDesc: "Inner depth, intuition, and silent observation dominate this date.",
+    fullDesc: `People born on 7th usually think deeply and observe quietly before reacting.
+
+Ketu gives inner depth, subtle thinking, and spiritual curiosity.
+
+They often search for hidden meaning and deeper truth.
+
+Sometimes isolation or emotional distance may appear.
+
+When balanced, this date gives intuition and deep wisdom.`,
     positiveTraits: ["Intuition", "Research", "Depth"],
     cautionTraits: ["Isolation", "Overthinking"],
     career: ["Writing", "Healing", "Occult"],
@@ -138,8 +194,16 @@ export const DOB_NUMBERS = [
     symbol: "8",
     name: "Date of Birth 8",
     rulingPlanet: "Saturn",
-    shortDesc: "Discipline, endurance, and serious life lessons.",
-    fullDesc: "You usually progress through patience more than speed. Responsibility often arrives early and shapes maturity deeply. Delayed success may still become stable and lasting. Heavy thinking can appear during demanding phases. Steady discipline usually builds long-term credibility.",
+    shortDesc: "Discipline, endurance, and slow but stable growth define this date.",
+    fullDesc: `People born on 8th often move through life with seriousness and responsibility.
+
+Saturn gives patience, endurance, and maturity through experience.
+
+Success often comes slowly but remains stable.
+
+Sometimes heaviness, loneliness, or delay may feel strong.
+
+When balanced, this date gives lasting achievement.`,
     positiveTraits: ["Patience", "Responsibility", "Endurance"],
     cautionTraits: ["Delay frustration", "Heavy thinking"],
     career: ["Industry", "Law", "Construction"],
@@ -157,8 +221,16 @@ export const DOB_NUMBERS = [
     symbol: "9",
     name: "Date of Birth 9",
     rulingPlanet: "Mars",
-    shortDesc: "Action, courage, and energetic force dominate life.",
-    fullDesc: "You usually react directly and move quickly in important situations. Courage becomes visible when challenges appear. Strong will often helps you protect what matters. Anger may rise when resistance feels unfair. Balanced energy usually brings strong achievement.",
+    shortDesc: "Action, courage, and strong energy dominate this date.",
+    fullDesc: `People born on 9th usually carry strong action energy and direct expression.
+
+Mars gives courage, force, and fast decision-making ability.
+
+They often take initiative and face challenge directly.
+
+Sometimes anger or impulsive reactions may appear.
+
+When balanced, this date gives courage and determined success.`,
     positiveTraits: ["Courage", "Action", "Determination"],
     cautionTraits: ["Anger", "Impulsiveness"],
     career: ["Police", "Medical", "Administration"],
@@ -176,8 +248,16 @@ export const DOB_NUMBERS = [
     symbol: "10",
     name: "Date of Birth 10",
     rulingPlanet: "Sun",
-    shortDesc: "Powerful Sun vibration with multiplied individuality and visibility.",
-    fullDesc: "You often carry amplified self-confidence and a strong need to create your own place in life. Leadership may appear naturally in practical matters. Recognition and authority often remain important motivations. Pressure can increase when expectations become too high. Balanced effort usually brings visible success.",
+    shortDesc: "Powerful Sun vibration with stronger individuality and visible authority.",
+    fullDesc: `People born on 10th carry amplified Sun energy because zero strengthens individuality and self-expression.
+
+They usually want recognition, independence, and visible achievement.
+
+Leadership quality often appears naturally.
+
+Sometimes ego or internal pressure becomes strong.
+
+When balanced, this date gives authority and strong success.`,
     positiveTraits: ["Leadership", "Confidence", "Authority"],
     cautionTraits: ["Ego", "Pressure", "Rigidity"],
     career: ["Administration", "Government", "Politics", "Medical"],
@@ -195,8 +275,16 @@ export const DOB_NUMBERS = [
     symbol: "11",
     name: "Date of Birth 11",
     rulingPlanet: "Moon",
-    shortDesc: "Master number with intuition, emotional power, and natural attraction.",
-    fullDesc: "You often carry unusual sensitivity along with visible personal influence. Emotional depth and intuition remain stronger than average. People may naturally feel drawn toward your presence. Small emotional disturbances can stay in the mind longer than expected. Inner balance usually improves fortune greatly.",
+    shortDesc: "Master vibration with intuition, attraction, and emotional power.",
+    fullDesc: `People born on 11th often carry a highly sensitive and influential vibration because this date is considered a master number. It combines strong inner awareness with visible personal magnetism.
+
+Such people usually attract attention naturally and often carry ambition along with emotional intelligence.
+
+They may possess imagination, moral strength, and a strong ability to influence others through words or behaviour.
+
+Sometimes small emotional events affect them deeply and mental pressure remains hidden inside.
+
+When balanced, this date gives intuition, public appeal, and refined inner strength.`,
     positiveTraits: ["Intuition", "Attraction", "Moral strength"],
     cautionTraits: ["Emotional hurt", "Pride", "Stress"],
     career: ["Administration", "Medical", "Creative work", "Leadership"],
@@ -214,8 +302,16 @@ export const DOB_NUMBERS = [
     symbol: "12",
     name: "Date of Birth 12",
     rulingPlanet: "Jupiter",
-    shortDesc: "Moon and Sun combine to create thoughtful Jupiter expression.",
-    fullDesc: "You usually carry emotional softness along with intellectual growth. Communication often becomes an important strength in life. Ideas may come naturally and people often value your advice. Slow decisions may happen when both heart and mind stay active. Structured learning usually improves progress.",
+    shortDesc: "Thoughtful Jupiter expression formed through emotional and mental balance.",
+    fullDesc: `People born on 12th usually carry a thoughtful combination of emotional softness and intellectual growth.
+
+This date often supports communication, creativity, and social friendliness.
+
+Such people usually understand others well and prefer meaningful interaction.
+
+Sometimes mental hesitation may slow decisions.
+
+When balanced, this date gives wisdom, learning, and smooth progress.`,
     positiveTraits: ["Wisdom", "Friendliness", "Creativity"],
     cautionTraits: ["Indecision", "Mental overload"],
     career: ["Teaching", "Writing", "Counselling", "Administration"],
@@ -233,8 +329,16 @@ export const DOB_NUMBERS = [
     symbol: "13",
     name: "Date of Birth 13",
     rulingPlanet: "Rahu",
-    shortDesc: "Sun and Jupiter combine into a forceful Rahu pattern.",
-    fullDesc: "You often think independently and prefer creating results through your own methods. Unusual ideas may become practical strengths over time. Leadership appears when situations demand courage. Hidden tension may arise when authority creates conflict. Flexibility usually improves long-term outcomes.",
+    shortDesc: "Unusual ambition, strategic thinking, and Rahu-driven originality appear strongly.",
+    fullDesc: `People born on 13th often carry a powerful combination of independent thinking and practical ambition.
+
+This date creates unusual ideas and a tendency to move differently from common patterns.
+
+Such people usually prefer their own methods and often think ahead strategically.
+
+Sometimes stubbornness, hidden stress, or conflict with authority may appear.
+
+When balanced, this date gives originality, planning strength, and practical rise.`,
     positiveTraits: ["Originality", "Strategy", "Leadership"],
     cautionTraits: ["Stubbornness", "Mental stress"],
     career: ["Politics", "Design", "Law", "Technology"],
@@ -252,8 +356,16 @@ export const DOB_NUMBERS = [
     symbol: "14",
     name: "Date of Birth 14",
     rulingPlanet: "Mercury",
-    shortDesc: "Fast-moving intelligence with changing life patterns.",
-    fullDesc: "You usually think quickly and understand changing situations rapidly. Communication and flexibility often help you move ahead. Life may bring repeated movement or unexpected adjustments. Mental restlessness can affect consistency. Clear planning usually improves stability.",
+    shortDesc: "Fast-moving intelligence with frequent change and mental alertness.",
+    fullDesc: `People born on 14th usually carry sharp intelligence and quick adaptability.
+
+Mercury influence here often creates movement, change, and fast communication.
+
+Such people understand situations rapidly and respond practically.
+
+Sometimes nervous pressure or inconsistency may disturb stability.
+
+When balanced, this date gives communication success and adaptability.`,
     positiveTraits: ["Intelligence", "Adaptability", "Communication"],
     cautionTraits: ["Restlessness", "Impatience"],
     career: ["Business", "Media", "Sales", "Writing"],
@@ -271,8 +383,16 @@ export const DOB_NUMBERS = [
     symbol: "15",
     name: "Date of Birth 15",
     rulingPlanet: "Venus",
-    shortDesc: "Attraction, creativity, and emotional magnetism become strong.",
-    fullDesc: "You often influence others through warmth, charm, and expression. Relationships usually play an important role in emotional growth. Creativity may appear naturally in speech or behaviour. Attachment can increase when expectations deepen. Balanced choices usually support harmony.",
+    shortDesc: "Charm, emotional warmth, and creative attraction become stronger here.",
+    fullDesc: `People born on 15th often carry strong personal attraction and pleasing behaviour.
+
+Venus influence gives warmth, beauty sense, and social magnetism.
+
+They usually value relationships, comfort, and harmony.
+
+Sometimes emotional attachment or expectation becomes stronger.
+
+When balanced, this date gives charm, popularity, and creative success.`,
     positiveTraits: ["Charm", "Creativity", "Warmth"],
     cautionTraits: ["Attachment", "Luxury tendency"],
     career: ["Arts", "Hospitality", "Design"],
@@ -290,8 +410,16 @@ export const DOB_NUMBERS = [
     symbol: "16",
     name: "Date of Birth 16",
     rulingPlanet: "Ketu",
-    shortDesc: "Deep inner analysis and karmic learning shape this date.",
-    fullDesc: "You usually think deeply before trusting people or situations. Inner observation often becomes stronger than outer expression. Spiritual or hidden subjects may attract your attention naturally. Sudden emotional withdrawal may appear during pressure. Inner maturity usually strengthens intuition.",
+    shortDesc: "Deep inner analysis, karmic lessons, and strong self-reflection shape this date.",
+    fullDesc: `People born on 16th often carry a serious inner world and reflective mental depth.
+
+This date supports hidden analysis, spiritual curiosity, and deep observation.
+
+Such people usually think carefully before trusting situations.
+
+Sometimes disappointment, withdrawal, or mental pressure may arise suddenly.
+
+When balanced, this date gives intuition and inner maturity.`,
     positiveTraits: ["Intuition", "Depth", "Inner maturity"],
     cautionTraits: ["Isolation", "Mental pressure"],
     career: ["Research", "Occult", "Writing"],
@@ -309,8 +437,16 @@ export const DOB_NUMBERS = [
     symbol: "17",
     name: "Date of Birth 17",
     rulingPlanet: "Saturn",
-    shortDesc: "Disciplined ambition with visible strength and delayed stability.",
-    fullDesc: "You usually move through life with serious goals and practical focus. Long-term effort often brings stronger results than quick success. Respect grows through patience and reliability. Delays may test confidence during important phases. Structured effort usually builds lasting credibility.",
+    shortDesc: "Disciplined ambition and long-term stability develop strongly here.",
+    fullDesc: `People born on 17th often carry practical ambition and serious life direction.
+
+This date supports patience, endurance, and steady achievement.
+
+Such people usually gain respect slowly through consistency.
+
+Sometimes delays or emotional heaviness become noticeable.
+
+When balanced, this date gives lasting credibility and structured success.`,
     positiveTraits: ["Endurance", "Discipline", "Stability"],
     cautionTraits: ["Delay frustration", "Heaviness"],
     career: ["Industry", "Management", "Law"],
@@ -328,8 +464,16 @@ export const DOB_NUMBERS = [
     symbol: "18",
     name: "Date of Birth 18",
     rulingPlanet: "Mars",
-    shortDesc: "Strong action force with emotional intensity.",
-    fullDesc: "You often face difficult situations directly and respond with courage. Emotional force becomes strong when challenged. Protective instincts may appear naturally in relationships. Anger can rise quickly if pressure increases. Balanced energy usually creates strong achievement.",
+    shortDesc: "Strong energy, struggle power, and direct action dominate this date.",
+    fullDesc: `People born on 18th often carry strong courage and forceful reactions.
+
+This date supports struggle ability and emotional intensity.
+
+Such people usually stand firmly for what they believe.
+
+Sometimes anger or conflict may increase under pressure.
+
+When balanced, this date gives courage and determined rise.`,
     positiveTraits: ["Courage", "Action", "Determination"],
     cautionTraits: ["Anger", "Conflict"],
     career: ["Force", "Medical", "Administration"],
@@ -347,8 +491,16 @@ export const DOB_NUMBERS = [
     symbol: "19",
     name: "Date of Birth 19",
     rulingPlanet: "Sun",
-    shortDesc: "Sun and Mars combine into powerful self-driven leadership.",
-    fullDesc: "You usually carry strong independence with visible courage. Initiative appears naturally in practical situations. Ambition often becomes a strong driving force. Pride may increase when recognition feels delayed. Balanced confidence usually strengthens leadership.",
+    shortDesc: "Sun and Mars combine to create bold self-driven leadership.",
+    fullDesc: `People born on 19th often carry strong individuality with visible courage.
+
+This date supports independence, initiative, and ambition.
+
+Such people usually prefer direct action and self-effort.
+
+Sometimes pride or forceful behaviour may appear.
+
+When balanced, this date gives leadership and powerful progress.`,
     positiveTraits: ["Leadership", "Courage", "Initiative"],
     cautionTraits: ["Ego", "Harshness"],
     career: ["Administration", "Politics", "Planning"],
@@ -366,8 +518,16 @@ export const DOB_NUMBERS = [
     symbol: "20",
     name: "Date of Birth 20",
     rulingPlanet: "Moon",
-    shortDesc: "Powerful Moon influence with softness and emotional intelligence.",
-    fullDesc: "You usually remain caring, polite, and emotionally aware. Relationships strongly influence your peace of mind. Hidden worries may remain inside even when behaviour appears calm. Supportive environments improve clarity. Emotional balance usually strengthens progress.",
+    shortDesc: "Enhanced Moon vibration with softness, care, and emotional awareness.",
+    fullDesc: `People born on 20th often carry deeper emotional sensitivity because zero strengthens Moon influence.
+
+Such people usually remain polite, caring, and emotionally aware.
+
+They often understand relationships deeply and prefer peace.
+
+Sometimes hidden worry or mood fluctuation may continue internally.
+
+When balanced, this date gives empathy and emotional stability.`,
     positiveTraits: ["Sensitivity", "Care", "Diplomacy"],
     cautionTraits: ["Mood variation", "Worry"],
     career: ["Creative work", "Travel", "Support roles"],
@@ -385,8 +545,16 @@ export const DOB_NUMBERS = [
     symbol: "21",
     name: "Date of Birth 21",
     rulingPlanet: "Jupiter",
-    shortDesc: "Expressive wisdom and natural optimism become visible.",
-    fullDesc: "You usually combine emotional softness with confidence in expression. Friendly behaviour often attracts people naturally. Learning and communication improve life direction. Emotional fluctuation may affect consistency. Balanced thinking usually supports social growth.",
+    shortDesc: "Expressive wisdom, social warmth, and balanced optimism shape this date.",
+    fullDesc: `People born on 21st often carry a pleasant combination of emotional sensitivity and self-confidence. This date supports graceful communication and natural social ease.
+
+Such people usually appear friendly, thoughtful, and capable of maintaining harmony in relationships.
+
+They often have imagination, humour, and the ability to explain ideas clearly.
+
+Sometimes emotional fluctuation or dependence on appreciation may affect inner stability.
+
+When balanced, this date gives wisdom, optimism, and graceful social growth.`,
     positiveTraits: ["Wisdom", "Humour", "Friendliness"],
     cautionTraits: ["Emotional fluctuation", "Dependency"],
     career: ["Teaching", "Writing", "Public speaking"],
@@ -404,8 +572,16 @@ export const DOB_NUMBERS = [
     symbol: "22",
     name: "Date of Birth 22",
     rulingPlanet: "Rahu",
-    shortDesc: "Master builder vibration with strong planning ability.",
-    fullDesc: "You usually think in larger structures and long-term results. Practical vision may remain stronger than ordinary expectations. Hidden pressure often increases because goals feel important. Different thinking helps create uncommon paths. Patience usually converts ideas into achievement.",
+    shortDesc: "Master builder energy with planning power and strong practical vision.",
+    fullDesc: `People born on 22nd often carry strong internal pressure to build something meaningful in life. This master number supports long-term planning and unusual practical strength.
+
+Such people usually think differently and aim for visible results.
+
+They often carry organisational ability and serious work orientation.
+
+Sometimes overthinking or internal dissatisfaction may disturb peace.
+
+When balanced, this date gives structured success and practical influence.`,
     positiveTraits: ["Planning", "Originality", "Structure"],
     cautionTraits: ["Mental pressure", "Restlessness"],
     career: ["Construction", "Technology", "Administration"],
@@ -423,8 +599,16 @@ export const DOB_NUMBERS = [
     symbol: "23",
     name: "Date of Birth 23",
     rulingPlanet: "Mercury",
-    shortDesc: "Sharp Mercury intelligence with social adaptability.",
-    fullDesc: "You usually understand situations quickly and respond effectively. Communication often creates important opportunities. Flexibility helps you move through changing environments. Mental speed may create impatience at times. Focus usually strengthens results.",
+    shortDesc: "Sharp communication, mental speed, and social adaptability become strong.",
+    fullDesc: `People born on 23rd usually carry strong communication skill and quick mental response.
+
+This date supports flexibility, calculation ability, and practical intelligence.
+
+Such people usually understand situations rapidly and express ideas effectively.
+
+Sometimes impatience or mental overactivity may reduce consistency.
+
+When balanced, this date gives opportunity through communication and networking.`,
     positiveTraits: ["Communication", "Sharp mind", "Adaptability"],
     cautionTraits: ["Mental overactivity", "Impatience"],
     career: ["Business", "Media", "Counselling"],
@@ -442,8 +626,16 @@ export const DOB_NUMBERS = [
     symbol: "24",
     name: "Date of Birth 24",
     rulingPlanet: "Venus",
-    shortDesc: "Stable Venus expression with care and harmony.",
-    fullDesc: "You usually value family, comfort, and emotional stability deeply. Responsibility often becomes a natural part of life. Supportive relationships strengthen your confidence. Emotional burden may rise when duties increase. Balanced affection usually creates peace.",
+    shortDesc: "Stable Venus influence brings care, responsibility, and emotional balance.",
+    fullDesc: `People born on 24th often carry warmth, responsibility, and practical emotional maturity.
+
+Such people usually value family, comfort, and stable relationships.
+
+They often support others naturally and maintain balanced surroundings.
+
+Sometimes emotional burden or over-responsibility becomes heavy.
+
+When balanced, this date gives harmony and steady material comfort.`,
     positiveTraits: ["Responsibility", "Harmony", "Care"],
     cautionTraits: ["Emotional burden", "Attachment"],
     career: ["Hospitality", "Finance", "Support roles"],
@@ -461,8 +653,16 @@ export const DOB_NUMBERS = [
     symbol: "25",
     name: "Date of Birth 25",
     rulingPlanet: "Ketu",
-    shortDesc: "Analytical mind and hidden intuition become strong.",
-    fullDesc: "You usually study people and situations deeply before trusting. Quiet observation often becomes your hidden strength. Intuition may guide important choices. Worry can increase when thoughts remain unresolved. Inner clarity usually improves decision-making.",
+    shortDesc: "Analytical thinking, intuition, and silent observation shape this date.",
+    fullDesc: `People born on 25th often carry strong analytical ability with inner sensitivity.
+
+Such people usually study situations carefully before trusting.
+
+They often possess intuition and interest in deeper subjects.
+
+Sometimes worry or emotional distance may appear.
+
+When balanced, this date gives insight and subtle mental strength.`,
     positiveTraits: ["Analysis", "Intuition", "Observation"],
     cautionTraits: ["Worry", "Isolation"],
     career: ["Research", "Writing", "Healing"],
@@ -480,8 +680,16 @@ export const DOB_NUMBERS = [
     symbol: "26",
     name: "Date of Birth 26",
     rulingPlanet: "Saturn",
-    shortDesc: "Responsibility and delayed rewards shape this date.",
-    fullDesc: "You usually become practical through responsibility and experience. Security and stability often remain strong concerns. Slow progress may still create lasting strength. Emotional heaviness may appear under pressure. Discipline usually improves long-term achievement.",
+    shortDesc: "Responsibility, delayed rewards, and serious life lessons dominate here.",
+    fullDesc: `People born on 26th often carry practical responsibility from early stages of life.
+
+This date usually creates serious thinking about security, work, and long-term stability.
+
+Such people often mature through experience and pressure.
+
+Sometimes delay, heaviness, or trust issues may appear.
+
+When balanced, this date gives endurance, authority, and lasting achievement.`,
     positiveTraits: ["Responsibility", "Endurance", "Practical maturity"],
     cautionTraits: ["Delay frustration", "Heaviness"],
     career: ["Finance", "Industry", "Administration"],
@@ -499,8 +707,16 @@ export const DOB_NUMBERS = [
     symbol: "27",
     name: "Date of Birth 27",
     rulingPlanet: "Mars",
-    shortDesc: "Courage joins intuition for purposeful action.",
-    fullDesc: "You usually combine courage with thoughtful judgement. Protective instincts often remain strong in important situations. Inner wisdom may guide decisions better with maturity. Emotional intensity can create pressure internally. Balanced action usually brings meaningful results.",
+    shortDesc: "Courage joins intuition to create thoughtful strength.",
+    fullDesc: `People born on 27th often combine courage with deeper inner understanding.
+
+Such people usually act firmly but think carefully before major decisions.
+
+They often carry duty, protection, and purposeful action.
+
+Sometimes emotional intensity or inner conflict may arise.
+
+When balanced, this date gives courage with wisdom.`,
     positiveTraits: ["Courage", "Wisdom", "Duty"],
     cautionTraits: ["Inner conflict", "Sharp reaction"],
     career: ["Medical", "Leadership", "Defence"],
@@ -518,8 +734,16 @@ export const DOB_NUMBERS = [
     symbol: "28",
     name: "Date of Birth 28",
     rulingPlanet: "Sun",
-    shortDesc: "Leadership develops through struggle and self-correction.",
-    fullDesc: "You usually seek independence and visible recognition. Life may teach confidence through repeated practical lessons. Leadership grows stronger after setbacks. Relationship clashes may appear when ego becomes active. Mature effort usually brings stable authority.",
+    shortDesc: "Leadership develops through struggle, correction, and maturity.",
+    fullDesc: `People born on 28th often carry leadership potential, but life teaches through changing circumstances.
+
+Such people usually want independence and recognition.
+
+They often rebuild confidence after setbacks.
+
+Sometimes ego clashes or disappointment may appear.
+
+When balanced, this date gives resilience and mature authority.`,
     positiveTraits: ["Leadership", "Resilience", "Confidence"],
     cautionTraits: ["Ego clashes", "Disappointment"],
     career: ["Administration", "Business", "Planning"],
@@ -537,8 +761,16 @@ export const DOB_NUMBERS = [
     symbol: "29",
     name: "Date of Birth 29",
     rulingPlanet: "Moon",
-    shortDesc: "Highly sensitive vibration with strong intuition.",
-    fullDesc: "You usually feel emotional situations deeply and quickly. Intuition may become one of your strongest natural gifts. Relationships strongly affect inner peace. Mood shifts may create uncertainty in decisions. Emotional clarity usually improves progress.",
+    shortDesc: "Deep sensitivity and intuition create refined emotional perception.",
+    fullDesc: `People born on 29th often carry powerful emotional sensitivity and intuitive perception.
+
+Such people usually understand hidden feelings quickly.
+
+They often need emotional clarity to perform well.
+
+Sometimes doubt, hurt, or mood shifts become strong.
+
+When balanced, this date gives empathy and refined inner strength.`,
     positiveTraits: ["Intuition", "Empathy", "Sensitivity"],
     cautionTraits: ["Mood shifts", "Emotional hurt"],
     career: ["Creative work", "Healing", "Counselling"],
@@ -556,8 +788,16 @@ export const DOB_NUMBERS = [
     symbol: "30",
     name: "Date of Birth 30",
     rulingPlanet: "Jupiter",
-    shortDesc: "Jupiter expands ideas and expression strongly.",
-    fullDesc: "You usually think broadly and express ideas with confidence. Communication often becomes an important strength in life. Social respect may matter deeply. Scattered effort can delay results. Focused learning usually improves success.",
+    shortDesc: "Expanded expression, ideas, and intellectual influence become strong.",
+    fullDesc: `People born on 30th often carry expressive intelligence and a strong need to share ideas.
+
+Such people usually think broadly and explain well.
+
+They often value learning and social respect.
+
+Sometimes scattered effort may reduce progress.
+
+When balanced, this date gives wisdom and creative expansion.`,
     positiveTraits: ["Expression", "Wisdom", "Optimism"],
     cautionTraits: ["Overexpectation", "Scattered focus"],
     career: ["Teaching", "Writing", "Advisory"],
@@ -575,8 +815,16 @@ export const DOB_NUMBERS = [
     symbol: "31",
     name: "Date of Birth 31",
     rulingPlanet: "Rahu",
-    shortDesc: "Independent thinking with controlled originality.",
-    fullDesc: "You usually think differently but reveal ideas carefully. Practical control often becomes stronger than quick expression. Stable growth suits you better than sudden movement. Mental isolation may appear during stress. Patience usually converts originality into achievement.",
+    shortDesc: "Independent thought, originality, and controlled practical depth define this date.",
+    fullDesc: `People born on 31st often carry independent thought along with practical discipline.
+
+Such people may not reveal ideas quickly, but usually think in original ways.
+
+They often build slowly and prefer stable control.
+
+Sometimes inner resistance or mental isolation may appear.
+
+When balanced, this date gives originality and practical achievement.`,
     positiveTraits: ["Originality", "Control", "Practical depth"],
     cautionTraits: ["Isolation", "Resistance"],
     career: ["Technology", "Planning", "Research"],
