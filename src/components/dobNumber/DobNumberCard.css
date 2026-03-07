@@ -1,0 +1,359 @@
+/* ============================================================
+   DobNumberCard.css — Date of Birth Prediction Card
+   Teal/Cyan theme — distinct from gold (root) and purple (fortune)
+   ============================================================ */
+
+.dob-card {
+  border-radius:   16px;
+  padding:         28px 24px;
+  position:        relative;
+  overflow:        hidden;
+  border:          1px solid rgba(56, 189, 180, 0.35);
+  background:      linear-gradient(135deg, rgba(18, 40, 53, 0.92), rgba(8, 24, 32, 0.96));
+  backdrop-filter: blur(10px);
+  box-shadow:      0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(56,189,180,0.12);
+  animation:       dobReveal 0.6s ease-out both;
+}
+
+@keyframes dobReveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.dob-card::before {
+  content:    "";
+  position:   absolute;
+  top: 0; left: 0; right: 0;
+  height:     2px;
+  background: linear-gradient(90deg, transparent, #38bdb4, #80ede8, #38bdb4, transparent);
+}
+
+/* ── HEADER ───────────────────────────────────────────────── */
+.dob-header {
+  display:       flex;
+  align-items:   center;
+  gap:           16px;
+  margin-bottom: 20px;
+}
+
+.dob-day-symbol {
+  font-family: "Cinzel Decorative", serif;
+  font-size:   4rem;
+  font-weight: 900;
+  line-height: 1;
+  background:  linear-gradient(135deg, #80ede8, #38bdb4, #1a8a86);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip:         text;
+  filter:      drop-shadow(0 0 12px rgba(56,189,180,0.5));
+  animation:   dobFloat 4s ease-in-out infinite;
+  flex-shrink: 0;
+  width:       70px;
+  text-align:  center;
+}
+
+@keyframes dobFloat {
+  0%, 100% { transform: translateY(0);    }
+  50%       { transform: translateY(-5px); }
+}
+
+.dob-names { flex: 1; }
+
+.dob-name-en {
+  font-family:             "Cinzel Decorative", serif;
+  font-size:               1.5rem;
+  font-weight:             700;
+  background:              linear-gradient(135deg, #80ede8, #38bdb4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip:         text;
+  line-height:             1.1;
+}
+
+.dob-name-hi {
+  font-family: "EB Garamond", serif;
+  font-size:   1.2rem;
+  color:       var(--text-dim);
+  margin-top:  4px;
+  font-style:  italic;
+}
+
+/* Compound number badge */
+.dob-compound-badge {
+  display:       inline-flex;
+  align-items:   center;
+  gap:           6px;
+  margin-top:    8px;
+  padding:       4px 12px;
+  border-radius: 100px;
+  border:        1px solid rgba(56,189,180,0.3);
+  background:    rgba(56,189,180,0.08);
+}
+
+.dob-compound-label {
+  font-family:    "Cinzel", serif;
+  font-size:      0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:          rgba(128,237,232,0.6);
+}
+
+.dob-compound-value {
+  font-family: "Cinzel Decorative", serif;
+  font-size:   0.9rem;
+  font-weight: 700;
+  color:       #80ede8;
+}
+
+/* ── PILLS ────────────────────────────────────────────────── */
+.dob-pills {
+  display:       flex;
+  gap:           10px;
+  flex-wrap:     wrap;
+  margin-bottom: 20px;
+}
+
+.dob-pill {
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  flex:           1;
+  min-width:      100px;
+  padding:        12px 10px;
+  border-radius:  10px;
+  border:         1px solid rgba(56,189,180,0.22);
+  background:     rgba(56,189,180,0.06);
+  text-align:     center;
+}
+
+.dob-pill-label {
+  font-family:    "Cinzel", serif;
+  font-size:      0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:          rgba(128,237,232,0.55);
+  margin-bottom:  6px;
+}
+
+.dob-pill-value-en {
+  font-family: "Cinzel", serif;
+  font-size:   0.88rem;
+  font-weight: 600;
+  color:       #80ede8;
+  line-height: 1.2;
+}
+
+.dob-pill-value-hi {
+  font-family: "EB Garamond", serif;
+  font-size:   0.9rem;
+  color:       var(--text-dim);
+  font-style:  italic;
+  margin-top:  3px;
+}
+
+.dob-pill.root-pill {
+  border-color: rgba(201,168,76,0.35);
+  background:   rgba(201,168,76,0.07);
+}
+
+.dob-pill.root-pill .dob-root-big {
+  font-family: "Cinzel Decorative", serif;
+  font-size:   1.8rem;
+  font-weight: 700;
+  color:       var(--gold-light);
+  filter:      drop-shadow(0 0 6px rgba(201,168,76,0.4));
+}
+
+/* ── SHORT DESC ───────────────────────────────────────────── */
+.dob-short-wrap {
+  display:       flex;
+  gap:           10px;
+  flex-wrap:     wrap;
+  margin-bottom: 20px;
+}
+
+.dob-short-box {
+  flex:          1;
+  min-width:     160px;
+  padding:       12px 16px;
+  border-radius: 10px;
+  border:        1px solid rgba(56,189,180,0.18);
+  background:    rgba(56,189,180,0.05);
+  font-family:   "EB Garamond", serif;
+  font-size:     1rem;
+  font-style:    italic;
+  line-height:   1.5;
+  color:         #80ede8;
+}
+
+.dob-short-box.hi { color: var(--text-dim); }
+
+/* ── DESCRIPTIONS ─────────────────────────────────────────── */
+.dob-desc-wrap {
+  border-top:    1px solid rgba(56,189,180,0.12);
+  padding-top:   16px;
+  margin-bottom: 20px;
+}
+
+.dob-desc-block            { margin-bottom: 14px; }
+.dob-desc-block:last-child { margin-bottom: 0;    }
+
+.dob-desc-lang {
+  font-family:    "Cinzel", serif;
+  font-size:      0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color:          rgba(128,237,232,0.55);
+  margin-bottom:  6px;
+  display:        flex;
+  align-items:    center;
+  gap:            6px;
+}
+
+.dob-desc-lang::after {
+  content:    "";
+  flex:       1;
+  height:     1px;
+  background: linear-gradient(90deg, rgba(56,189,180,0.22), transparent);
+}
+
+.dob-desc-text {
+  font-family: "EB Garamond", serif;
+  font-size:   1rem;
+  color:       var(--text);
+  line-height: 1.75;
+  opacity:     0.9;
+  white-space: pre-line;
+}
+
+.dob-desc-text.hindi {
+  font-size: 1.05rem;
+  color:     var(--text-dim);
+}
+
+/* ── TRAITS ───────────────────────────────────────────────── */
+.dob-traits-row {
+  display:       flex;
+  gap:           10px;
+  flex-wrap:     wrap;
+  margin-bottom: 20px;
+}
+
+.dob-traits-box {
+  flex:          1;
+  min-width:     140px;
+  padding:       14px;
+  border-radius: 10px;
+  border:        1px solid rgba(124,235,160,0.25);
+  background:    rgba(124,235,160,0.05);
+}
+
+.dob-traits-box.caution {
+  border-color: rgba(240,120,120,0.25);
+  background:   rgba(240,120,120,0.05);
+}
+
+.dob-traits-title {
+  font-family:    "Cinzel", serif;
+  font-size:      0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:          #7ceba0;
+  margin-bottom:  10px;
+}
+
+.dob-traits-box.caution .dob-traits-title { color: #f07878; }
+
+.dob-trait-tag {
+  display:       inline-block;
+  padding:       3px 10px;
+  border-radius: 100px;
+  font-family:   "Cinzel", serif;
+  font-size:     0.62rem;
+  margin:        3px 3px 0 0;
+  background:    rgba(124,235,160,0.1);
+  color:         #7ceba0;
+  border:        1px solid rgba(124,235,160,0.2);
+}
+
+.dob-traits-box.caution .dob-trait-tag {
+  background: rgba(240,120,120,0.1);
+  color:      #f07878;
+  border:     1px solid rgba(240,120,120,0.2);
+}
+
+/* ── LUCKY GRID ───────────────────────────────────────────── */
+.dob-lucky-grid {
+  display:               grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:                   10px;
+  margin-bottom:         20px;
+}
+
+@media (max-width: 480px) {
+  .dob-lucky-grid { grid-template-columns: 1fr; }
+}
+
+.dob-lucky-box {
+  padding:       12px 14px;
+  border-radius: 10px;
+  border:        1px solid rgba(56,189,180,0.16);
+  background:    rgba(255,255,255,0.02);
+}
+
+.dob-lucky-box.full-width { grid-column: 1 / -1; }
+
+.dob-lucky-label {
+  font-family:    "Cinzel", serif;
+  font-size:      0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:          rgba(128,237,232,0.55);
+  margin-bottom:  8px;
+}
+
+.dob-tag-row {
+  display:   flex;
+  flex-wrap: wrap;
+  gap:       5px;
+}
+
+.dob-tag {
+  display:       inline-block;
+  padding:       3px 10px;
+  border-radius: 100px;
+  font-family:   "EB Garamond", serif;
+  font-size:     0.85rem;
+  background:    rgba(56,189,180,0.07);
+  color:         var(--text-dim);
+  border:        1px solid rgba(56,189,180,0.18);
+}
+
+.dob-tag.number {
+  font-family:  "Cinzel Decorative", serif;
+  font-size:    1rem;
+  font-weight:  700;
+  color:        #80ede8;
+  background:   rgba(56,189,180,0.1);
+  border-color: rgba(56,189,180,0.38);
+  padding:      4px 12px;
+}
+
+.dob-tag.health {
+  color:        #f09090;
+  border-color: rgba(240,120,120,0.2);
+  background:   rgba(240,120,120,0.06);
+}
+
+.dob-tag.stone {
+  color:        #c4a0f0;
+  border-color: rgba(196,160,240,0.25);
+  background:   rgba(196,160,240,0.06);
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 500px) {
+  .dob-name-en    { font-size: 1.2rem; }
+  .dob-day-symbol { font-size: 3rem; width: 55px; }
+  .dob-pill       { min-width: 80px; }
+}

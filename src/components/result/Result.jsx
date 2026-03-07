@@ -9,6 +9,7 @@ import Verdict from "./Verdict";
 import SunSignCard from "../sunSign/SunSignCard";
 import RootNumberCard from "../rootNumber/RootNumberCard";
 import FortuneNumberCard from "../fortuneNumber/FortuneNumberCard";
+import DobNumberCard from "../dobNumber/DobNumberCard";
 import { VERDICT } from "../../data/verdict";
 import "./Result.css";
 
@@ -23,6 +24,7 @@ const GLOWING_STAR_SYMBOL = String.fromCodePoint(0x1f31f);
 const SUN_SYMBOL = String.fromCodePoint(0x2609);
 const ROOT_SYMBOL = String.fromCodePoint(0x2736);
 const FORTUNE_SYMBOL = String.fromCodePoint(0x1f52e);
+const DOB_SYMBOL = String.fromCodePoint(0x1f4c6);
 
 function getVerdictMeta(scale) {
   if (scale <= 3) {
@@ -110,6 +112,16 @@ export default function Result({ result, onReset }) {
           <FortuneNumberCard fortuneData={result.fortuneData} />
         </Card>
       )}
+
+      {result.dobNumberData && (
+        <Card>
+          <CardTitle>
+            {DOB_SYMBOL} Janma Nakshatra — Birth Date Prediction
+          </CardTitle>
+          <DobNumberCard dobData={result.dobNumberData} />
+        </Card>
+      )}
+
       <button type="button" className="result-reset-btn" onClick={onReset}>
         {RESET_SYMBOL} Consult Again
       </button>

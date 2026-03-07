@@ -49,6 +49,7 @@ export default function DobInput({ onValidDob }) {
         sunSign: dobResult.sunSign,
         rootData: dobResult.rootData,
         fortuneData: dobResult.fortuneData,
+        dobNumberData: dobResult.dobNumberData,
       });
 
       return;
