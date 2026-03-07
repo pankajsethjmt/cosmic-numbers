@@ -8,6 +8,7 @@ import ScoreRow from "./ScoreRow";
 import Verdict from "./Verdict";
 import SunSignCard from "../sunSign/SunSignCard";
 import RootNumberCard from "../rootNumber/RootNumberCard";
+import FortuneNumberCard from "../fortuneNumber/FortuneNumberCard";
 import { VERDICT } from "../../data/verdict";
 import "./Result.css";
 
@@ -21,6 +22,7 @@ const SPARKLES_SYMBOL = String.fromCodePoint(0x2728);
 const GLOWING_STAR_SYMBOL = String.fromCodePoint(0x1f31f);
 const SUN_SYMBOL = String.fromCodePoint(0x2609);
 const ROOT_SYMBOL = String.fromCodePoint(0x2736);
+const FORTUNE_SYMBOL = String.fromCodePoint(0x1f52e);
 
 function getVerdictMeta(scale) {
   if (scale <= 3) {
@@ -83,10 +85,6 @@ export default function Result({ result, onReset }) {
         <Verdict verdict={verdict} meta={verdictMeta} />
 
         <MatchBreakdown matches={result.matches} />
-
-        <button type="button" className="result-reset-btn" onClick={onReset}>
-          {RESET_SYMBOL} Consult Again
-        </button>
       </Card>
 
       <Card>
@@ -97,10 +95,24 @@ export default function Result({ result, onReset }) {
         <CardTitle>{SUN_SYMBOL} Vedic Sun Sign — Janma Rashi</CardTitle>
         <SunSignCard sunSign={result.sunSign} />
       </Card>
-      <Card>
-        <CardTitle>{ROOT_SYMBOL} Birth Root Number</CardTitle>
-        <RootNumberCard rootData={result.rootData} />
-      </Card>
+      {result.rootData && (
+        <Card>
+          <CardTitle>{ROOT_SYMBOL} Moolank — Root Number Prediction</CardTitle>
+          <RootNumberCard rootData={result.rootData} />
+        </Card>
+      )}
+
+      {result.fortuneData && (
+        <Card>
+          <CardTitle>
+            {FORTUNE_SYMBOL} Bhagyank — Fortune Number Prediction
+          </CardTitle>
+          <FortuneNumberCard fortuneData={result.fortuneData} />
+        </Card>
+      )}
+      <button type="button" className="result-reset-btn" onClick={onReset}>
+        {RESET_SYMBOL} Consult Again
+      </button>
     </section>
   );
 }

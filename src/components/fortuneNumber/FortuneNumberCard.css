@@ -1,0 +1,385 @@
+/* ============================================================
+   FortuneNumberCard.css — Fortune Number Card styles
+   Same design language as RootNumberCard.css / SunSignCard.css
+   ============================================================ */
+
+/* ── MAIN CARD ────────────────────────────────────────────── */
+.fn-card {
+  border-radius:   16px;
+  padding:         28px 24px;
+  position:        relative;
+  overflow:        hidden;
+  border:          1px solid rgba(138, 101, 212, 0.35);
+  background:      linear-gradient(135deg, rgba(26,18,53,0.9), rgba(13,8,32,0.95));
+  backdrop-filter: blur(10px);
+  box-shadow:      0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(138,101,212,0.15);
+  animation:       fnReveal 0.6s ease-out both;
+}
+
+@keyframes fnReveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* Purple destiny top-line (distinct from gold root number) */
+.fn-card::before {
+  content:    "";
+  position:   absolute;
+  top: 0; left: 0; right: 0;
+  height:     2px;
+  background: linear-gradient(90deg, transparent, #8a65d4, #c4a0f0, #8a65d4, transparent);
+}
+
+/* ── HEADER ROW ───────────────────────────────────────────── */
+.fn-header {
+  display:       flex;
+  align-items:   center;
+  gap:           16px;
+  margin-bottom: 20px;
+}
+
+.fn-number-symbol {
+  font-family: "Cinzel Decorative", serif;
+  font-size:   4rem;
+  font-weight: 900;
+  line-height: 1;
+  background:  linear-gradient(135deg, #c4a0f0, #8a65d4, #5a35a4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip:         text;
+  filter:      drop-shadow(0 0 12px rgba(138,101,212,0.5));
+  animation:   fnFloat 4s ease-in-out infinite;
+  flex-shrink: 0;
+  width:       70px;
+  text-align:  center;
+}
+
+@keyframes fnFloat {
+  0%, 100% { transform: translateY(0);    }
+  50%       { transform: translateY(-5px); }
+}
+
+.fn-names { flex: 1; }
+
+.fn-name-en {
+  font-family:             "Cinzel Decorative", serif;
+  font-size:               1.5rem;
+  font-weight:             700;
+  background:              linear-gradient(135deg, #c4a0f0, #8a65d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip:         text;
+  line-height:             1.1;
+}
+
+.fn-name-hi {
+  font-family: "EB Garamond", serif;
+  font-size:   1.2rem;
+  color:       var(--text-dim);
+  margin-top:  4px;
+  font-style:  italic;
+}
+
+.fn-core-nature {
+  font-family:    "Cinzel", serif;
+  font-size:      0.68rem;
+  letter-spacing: 0.08em;
+  color:          rgba(196,160,240,0.6);
+  text-transform: uppercase;
+  margin-top:     6px;
+  line-height:    1.5;
+}
+
+/* ── INFO PILLS ROW ───────────────────────────────────────── */
+.fn-pills {
+  display:       flex;
+  gap:           10px;
+  flex-wrap:     wrap;
+  margin-bottom: 20px;
+}
+
+.fn-pill {
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  flex:           1;
+  min-width:      100px;
+  padding:        12px 10px;
+  border-radius:  10px;
+  border:         1px solid rgba(138,101,212,0.25);
+  background:     rgba(138,101,212,0.06);
+  text-align:     center;
+}
+
+.fn-pill-label {
+  font-family:    "Cinzel", serif;
+  font-size:      0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:          rgba(196,160,240,0.6);
+  margin-bottom:  6px;
+}
+
+.fn-pill-value-en {
+  font-family: "Cinzel", serif;
+  font-size:   0.88rem;
+  font-weight: 600;
+  color:       #c4a0f0;
+  line-height: 1.2;
+}
+
+.fn-pill-value-hi {
+  font-family: "EB Garamond", serif;
+  font-size:   0.9rem;
+  color:       var(--text-dim);
+  font-style:  italic;
+  margin-top:  3px;
+}
+
+/* Ruling number pill — purple highlight */
+.fn-pill.ruling-number-pill {
+  border-color: rgba(196,160,240,0.45);
+  background:   rgba(138,101,212,0.12);
+}
+
+.fn-ruling-number-big {
+  font-family: "Cinzel Decorative", serif;
+  font-size:   2rem;
+  font-weight: 700;
+  color:       #c4a0f0;
+  line-height: 1;
+  filter:      drop-shadow(0 0 8px rgba(138,101,212,0.5));
+}
+
+/* ── SHORT DESC ───────────────────────────────────────────── */
+.fn-short-desc-wrap {
+  display:       flex;
+  gap:           10px;
+  flex-wrap:     wrap;
+  margin-bottom: 20px;
+}
+
+.fn-short-box {
+  flex:          1;
+  min-width:     160px;
+  padding:       12px 16px;
+  border-radius: 10px;
+  border:        1px solid rgba(138,101,212,0.2);
+  background:    rgba(138,101,212,0.05);
+  font-family:   "EB Garamond", serif;
+  font-size:     1rem;
+  font-style:    italic;
+  line-height:   1.5;
+  color:         #c4a0f0;
+}
+
+.fn-short-box.hi { color: var(--text-dim); }
+
+/* ── DESCRIPTION SECTION ──────────────────────────────────── */
+.fn-desc-wrap {
+  border-top:    1px solid rgba(138,101,212,0.15);
+  padding-top:   16px;
+  margin-bottom: 20px;
+}
+
+.fn-desc-block            { margin-bottom: 14px; }
+.fn-desc-block:last-child { margin-bottom: 0;    }
+
+.fn-desc-lang {
+  font-family:    "Cinzel", serif;
+  font-size:      0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color:          rgba(196,160,240,0.6);
+  margin-bottom:  6px;
+  display:        flex;
+  align-items:    center;
+  gap:            6px;
+}
+
+.fn-desc-lang::after {
+  content:    "";
+  flex:       1;
+  height:     1px;
+  background: linear-gradient(90deg, rgba(138,101,212,0.25), transparent);
+}
+
+.fn-desc-text {
+  font-family: "EB Garamond", serif;
+  font-size:   1rem;
+  color:       var(--text);
+  line-height: 1.75;
+  opacity:     0.9;
+  white-space: pre-line;
+}
+
+.fn-desc-text.hindi {
+  font-size: 1.05rem;
+  color:     var(--text-dim);
+}
+
+/* ── TRAITS ROW ───────────────────────────────────────────── */
+.fn-traits-row {
+  display:       flex;
+  gap:           10px;
+  flex-wrap:     wrap;
+  margin-bottom: 20px;
+}
+
+.fn-traits-box {
+  flex:          1;
+  min-width:     140px;
+  padding:       14px;
+  border-radius: 10px;
+  border:        1px solid rgba(124,235,160,0.25);
+  background:    rgba(124,235,160,0.05);
+}
+
+.fn-traits-box.caution {
+  border-color: rgba(240,120,120,0.25);
+  background:   rgba(240,120,120,0.05);
+}
+
+.fn-traits-title {
+  font-family:    "Cinzel", serif;
+  font-size:      0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:          #7ceba0;
+  margin-bottom:  10px;
+}
+
+.fn-traits-box.caution .fn-traits-title { color: #f07878; }
+
+.fn-trait-tag {
+  display:       inline-block;
+  padding:       3px 10px;
+  border-radius: 100px;
+  font-family:   "Cinzel", serif;
+  font-size:     0.62rem;
+  margin:        3px 3px 0 0;
+  background:    rgba(124,235,160,0.1);
+  color:         #7ceba0;
+  border:        1px solid rgba(124,235,160,0.2);
+}
+
+.fn-traits-box.caution .fn-trait-tag {
+  background: rgba(240,120,120,0.1);
+  color:      #f07878;
+  border:     1px solid rgba(240,120,120,0.2);
+}
+
+/* ── LUCKY INFO GRID ──────────────────────────────────────── */
+.fn-lucky-grid {
+  display:               grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:                   10px;
+  margin-bottom:         20px;
+}
+
+@media (max-width: 480px) {
+  .fn-lucky-grid { grid-template-columns: 1fr; }
+}
+
+.fn-lucky-box {
+  padding:       12px 14px;
+  border-radius: 10px;
+  border:        1px solid rgba(138,101,212,0.18);
+  background:    rgba(255,255,255,0.02);
+}
+
+.fn-lucky-box.full-width { grid-column: 1 / -1; }
+
+.fn-lucky-label {
+  font-family:    "Cinzel", serif;
+  font-size:      0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:          rgba(196,160,240,0.6);
+  margin-bottom:  8px;
+}
+
+.fn-tag-row {
+  display:   flex;
+  flex-wrap: wrap;
+  gap:       5px;
+}
+
+.fn-tag {
+  display:       inline-block;
+  padding:       3px 10px;
+  border-radius: 100px;
+  font-family:   "EB Garamond", serif;
+  font-size:     0.85rem;
+  background:    rgba(138,101,212,0.08);
+  color:         var(--text-dim);
+  border:        1px solid rgba(138,101,212,0.2);
+}
+
+.fn-tag.number {
+  font-family:  "Cinzel Decorative", serif;
+  font-size:    1rem;
+  font-weight:  700;
+  color:        #c4a0f0;
+  background:   rgba(138,101,212,0.12);
+  border-color: rgba(138,101,212,0.4);
+  padding:      4px 12px;
+}
+
+.fn-tag.health {
+  color:        #f09090;
+  border-color: rgba(240,120,120,0.2);
+  background:   rgba(240,120,120,0.06);
+}
+
+/* ── GEMSTONE SECTION ─────────────────────────────────────── */
+.fn-stone-wrap {
+  border-top:  1px solid rgba(138,101,212,0.15);
+  padding-top: 16px;
+}
+
+.fn-stone-main {
+  display:     flex;
+  align-items: center;
+  gap:         14px;
+  padding:     14px;
+  border-radius: 10px;
+  border:      1px solid rgba(196,160,240,0.3);
+  background:  rgba(138,101,212,0.08);
+}
+
+.fn-stone-gem  { font-size: 2.2rem; line-height: 1; flex-shrink: 0; }
+.fn-stone-info { flex: 1; }
+
+.fn-stone-label {
+  font-family:    "Cinzel", serif;
+  font-size:      0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:          rgba(196,160,240,0.6);
+  margin-bottom:  4px;
+}
+
+.fn-stone-name-en {
+  font-family: "Cinzel Decorative", serif;
+  font-size:   1.1rem;
+  font-weight: 700;
+  color:       #c4a0f0;
+  line-height: 1.2;
+}
+
+.fn-stone-name-hi {
+  font-family: "EB Garamond", serif;
+  font-size:   1rem;
+  color:       var(--text-dim);
+  font-style:  italic;
+  margin-top:  2px;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 500px) {
+  .fn-name-en       { font-size: 1.2rem; }
+  .fn-number-symbol { font-size: 3rem; width: 55px; }
+  .fn-pill          { min-width: 80px; }
+  .fn-ruling-number-big { font-size: 1.6rem; }
+}
