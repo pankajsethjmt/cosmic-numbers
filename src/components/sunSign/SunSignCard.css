@@ -238,14 +238,7 @@
   color: var(--text-dim);
 }
 
-*
-  ──
-  CORE
-  NATURE
-  (new)
-  ──────────────────────────────────────
-  */
-  .sun-sign-core-nature {
+.sun-sign-core-nature {
   font-family: "Cinzel", serif;
   font-size: 0.68rem;
   letter-spacing: 0.08em;
@@ -264,7 +257,7 @@
   font-size: 0.85rem;
 }
 
-/* ── SHORT DESC (new) ─────────────────────────────────────── */
+/* ── SHORT DESC ─────────────────────────────────────── */
 .sun-sign-short-wrap {
   display: flex;
   gap: 10px;
@@ -290,7 +283,7 @@
   color: var(--text-dim);
 }
 
-/* ── TRAITS (new) ─────────────────────────────────────────── */
+/* ── TRAITS  ─────────────────────────────────────────── */
 .sun-sign-traits-row {
   display: flex;
   gap: 10px;
@@ -343,7 +336,7 @@
   border: 1px solid rgba(240, 120, 120, 0.2);
 }
 
-/* ── LUCKY GRID (new) ─────────────────────────────────────── */
+/* ── LUCKY GRID  ─────────────────────────────────────── */
 .sun-sign-lucky-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -410,7 +403,7 @@
   background: rgba(240, 120, 120, 0.06);
 }
 
-/* ── GEMSTONE (new) ───────────────────────────────────────── */
+/* ── GEMSTONE ───────────────────────────────────────── */
 .sun-sign-stone-wrap {
   border-top: 1px solid rgba(201, 168, 76, 0.12);
   padding-top: 16px;
