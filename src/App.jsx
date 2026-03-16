@@ -1,9 +1,9 @@
 import { useState } from "react";
+import CosmicScene from "./components/starfield/CosmicScene";
 import Header from "./components/header/Header";
 import MainForm from "./components/mainForm/MainForm";
 import Result from "./components/result/Result";
 // import Starfield from "./components/starfield/Starfield";
-import CosmicScene from "./components/starfield/CosmicScene";
 // import StarfieldDeep from "./components/starfield/StarfieldDeep";
 
 function App() {
@@ -11,7 +11,6 @@ function App() {
 
   return (
     <div className="container">
-      
       {/* <Starfield /> */}
       {/* <StarfieldDeep /> */}
       <CosmicScene />

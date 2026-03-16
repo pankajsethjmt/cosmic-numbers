@@ -1,101 +1,103 @@
+// ============================================================
+// NameResult.jsx
+// Top: 5 summary badges (numbers at a glance)
+// Below: 5 full prediction cards (SunSignCard-style)
+// ============================================================
+
+import { NAME_MEANINGS, PYTH_TABLE } from "../../../utils/nameNumerology";
+
+import { getNameNumberPredication as getModernEn } from "../../../utils/nameNumber/nameNumberModern_Prediction";
+import { getNameNumberPredication as getModernHi } from "../../../utils/nameNumber/nameNumberModern_Prediction_Hi";
 import {
-  NAME_MEANINGS,
-  SOUL_MEANINGS,
-  PERSONALITY_MEANINGS,
-  PYTH_TABLE,
-} from "../../../utils/nameNumerology";
+  getCheiroPredication,
+  getCompoundPredication,
+} from "../../../utils/nameNumber/nameNumberCheiro_Prediction";
+import {
+  getCheiroPredication as getCheiroHi,
+  getCompoundPredication as getCompoundHi,
+} from "../../../utils/nameNumber/nameNumberCheiro_Prediction_Hi";
+import { getSoulPredication as getSoulEn } from "../../../utils/nameNumber/soulNumber_Prediction";
+import { getSoulPredication as getSoulHi } from "../../../utils/nameNumber/soulNumber_Prediction_Hi";
+import { getPersonalityPredication as getPersEn } from "../../../utils/nameNumber/personalityNumber_Prediction";
+import { getPersonalityPredication as getPersHi } from "../../../utils/nameNumber/personalityNumber_Predication_HI";
+
+import NameNumberCard from "../../nameNumber/NameNumberCard";
+import SummaryBadge from "../../ui/SummaryBadge";
 import "./NameForm.css";
 
 const VOWELS = new Set(["A", "E", "I", "O", "U"]);
-const NAME_ICON = String.fromCodePoint(0x2726);
-const SOUL_ICON = String.fromCodePoint(0x1f319);
-const PERSONALITY_ICON = String.fromCodePoint(0x1f52e);
-const MERCURY_SYMBOL = String.fromCodePoint(0x263f);
 const STAR_SYMBOL = String.fromCodePoint(0x2605);
 
-function getMeaning(number) {
-  if (!number) {
-    return {
-      title: "Not Available",
-      planet: "-",
-      desc: "This value could not be derived from the entered name.",
-    };
-  }
+// ── Small summary badge at top ───────────────────────────────
 
-  return NAME_MEANINGS[number];
-}
-
-function getText(map, number, fallback) {
-  if (!number) {
-    return fallback;
-  }
-
-  return map[number];
-}
-
+// ── MAIN COMPONENT ───────────────────────────────────────────
 export default function NameResult({ result }) {
   if (!result) return null;
 
-  const { nameNumber, soulNumber, personalityNumber } = result;
+  const {
+    nameNumber,
+    soulNumber,
+    personalityNumber,
+    cheiroNumber,
+    compoundNumber,
+  } = result;
+
+  // Fetch all predictions
+  const modernEn = nameNumber ? getModernEn(nameNumber) : null;
+  const modernHi = nameNumber ? getModernHi(nameNumber) : null;
+  const cheiroEn = cheiroNumber ? getCheiroPredication(cheiroNumber) : null;
+  const cheiroHi = cheiroNumber ? getCheiroHi(cheiroNumber) : null;
+  const compoundEn =
+    compoundNumber > 9 ? getCompoundPredication(compoundNumber) : null;
+  const compoundHi = compoundNumber > 9 ? getCompoundHi(compoundNumber) : null;
+  const soulEn = soulNumber ? getSoulEn(soulNumber) : null;
+  const soulHi = soulNumber ? getSoulHi(soulNumber) : null;
+  const persEn = personalityNumber ? getPersEn(personalityNumber) : null;
+  const persHi = personalityNumber ? getPersHi(personalityNumber) : null;
 
   return (
-    <div>
-      <div className="name-numbers-row">
-        <NameBadge
-          type="name-badge"
-          icon={NAME_ICON}
-          label="Name Number"
+    <div className="name-result-wrap">
+      <div className="nn-summary-row">
+        <SummaryBadge
+          theme="gold"
+          typeLabel="Name No."
           number={nameNumber}
-          meaning={getMeaning(nameNumber)}
-          desc={getMeaning(nameNumber).desc}
+          title={modernEn?.title || NAME_MEANINGS[nameNumber]?.title}
         />
-        <NameBadge
-          type="soul-badge"
-          icon={SOUL_ICON}
-          label="Soul Number"
+        <SummaryBadge
+          theme="teal"
+          typeLabel="Cheiro No."
+          number={cheiroNumber}
+          title={cheiroEn?.title}
+        />
+        {compoundNumber > 9 && (
+          <SummaryBadge
+            theme="teal"
+            typeLabel="Compound"
+            number={compoundNumber}
+            title={compoundEn?.title}
+          />
+        )}
+        <SummaryBadge
+          theme="purple"
+          typeLabel="Soul No."
           number={soulNumber}
-          meaning={getMeaning(soulNumber)}
-          desc={getText(
-            SOUL_MEANINGS,
-            soulNumber,
-            "No vowel energy found in this name.",
-          )}
+          title={soulEn?.title || NAME_MEANINGS[soulNumber]?.title}
         />
-        <NameBadge
-          type="pers-badge"
-          icon={PERSONALITY_ICON}
-          label="Personality Number"
+        <SummaryBadge
+          theme="pink"
+          typeLabel="Personality"
           number={personalityNumber}
-          meaning={getMeaning(personalityNumber)}
-          desc={getText(
-            PERSONALITY_MEANINGS,
-            personalityNumber,
-            "No consonant energy found in this name.",
-          )}
+          title={persEn?.title || NAME_MEANINGS[personalityNumber]?.title}
         />
       </div>
-
+      {/* ── Letter chart ── */}
       <details className="name-reference-details">
         <summary className="name-reference-summary">
           Pythagorean Letter Chart
         </summary>
         <PythagoreanTable />
       </details>
-    </div>
-  );
-}
-
-function NameBadge({ type, icon, label, number, meaning, desc }) {
-  return (
-    <div className={`name-num-badge name-badge ${type}`}>
-      <span className="name-badge-icon">{icon}</span>
-      <div className="name-badge-label">{label}</div>
-      <div className="name-badge-number">{number ?? "-"}</div>
-      <div className="name-badge-title">{meaning.title}</div>
-      <div className="name-badge-planet">
-        {MERCURY_SYMBOL} {meaning.planet}
-      </div>
-      <div className="name-badge-desc">{desc}</div>
     </div>
   );
 }

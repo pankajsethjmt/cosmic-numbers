@@ -272,3 +272,289 @@
     min-width: 100%;
   }
 }
+/* ============================================================
+   NameResult — new prediction card styles
+   ============================================================ */
+
+.name-result-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── NUM SECTION ─────────────────────────────────────────── */
+.num-section {
+  border-radius: 14px;
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  background: rgba(255, 255, 255, 0.02);
+  overflow: hidden;
+}
+
+.num-section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.num-section-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.num-section-meta {
+  flex: 1;
+}
+
+.num-section-label {
+  font-family: "Cinzel", serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 3px;
+}
+
+.num-section-title {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  line-height: 1.2;
+}
+
+.num-section-planet {
+  font-family: "Cinzel", serif;
+  font-size: 0.68rem;
+  color: var(--gold-dim);
+  margin-top: 3px;
+  opacity: 0.7;
+}
+
+.num-section-number {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--gold-light);
+  line-height: 1;
+  filter: drop-shadow(0 0 8px rgba(201, 168, 76, 0.4));
+  flex-shrink: 0;
+}
+
+/* accent colors */
+.num-section.accent-gold {
+  border-color: rgba(201, 168, 76, 0.3);
+}
+.num-section.accent-teal {
+  border-color: rgba(56, 189, 180, 0.3);
+}
+.num-section.accent-purple {
+  border-color: rgba(138, 101, 212, 0.3);
+}
+.num-section.accent-pink {
+  border-color: rgba(220, 130, 180, 0.3);
+}
+
+.accent-teal .num-section-title,
+.accent-teal .num-section-number {
+  color: #80ede8;
+  filter: drop-shadow(0 0 8px rgba(56, 189, 180, 0.4));
+}
+.accent-teal .num-section-label,
+.accent-teal .num-section-planet {
+  color: rgba(128, 237, 232, 0.55);
+}
+
+.accent-purple .num-section-title,
+.accent-purple .num-section-number {
+  color: #c4a0f0;
+  filter: drop-shadow(0 0 8px rgba(138, 101, 212, 0.4));
+}
+.accent-purple .num-section-label,
+.accent-purple .num-section-planet {
+  color: rgba(196, 160, 240, 0.55);
+}
+
+.accent-pink .num-section-title,
+.accent-pink .num-section-number {
+  color: #f0a0c8;
+  filter: drop-shadow(0 0 8px rgba(220, 130, 180, 0.4));
+}
+.accent-pink .num-section-label,
+.accent-pink .num-section-planet {
+  color: rgba(240, 160, 200, 0.55);
+}
+
+/* ── PRED CARD ───────────────────────────────────────────── */
+.pred-card {
+  padding: 16px 18px;
+}
+
+/* short desc */
+.pred-short-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.pred-short {
+  flex: 1;
+  min-width: 140px;
+  padding: 10px 14px;
+  border-radius: 9px;
+  font-family: "EB Garamond", serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.5;
+  border: 1px solid rgba(201, 168, 76, 0.18);
+  background: rgba(201, 168, 76, 0.04);
+  color: var(--gold-light);
+}
+.pred-short.hi {
+  color: var(--text-dim);
+}
+
+/* accent overrides for short */
+.accent-teal .pred-short {
+  border-color: rgba(56, 189, 180, 0.2);
+  background: rgba(56, 189, 180, 0.04);
+  color: #80ede8;
+}
+.accent-teal .pred-short.hi {
+  color: var(--text-dim);
+}
+.accent-purple .pred-short {
+  border-color: rgba(138, 101, 212, 0.2);
+  background: rgba(138, 101, 212, 0.04);
+  color: #c4a0f0;
+}
+.accent-purple .pred-short.hi {
+  color: var(--text-dim);
+}
+.accent-pink .pred-short {
+  border-color: rgba(220, 130, 180, 0.2);
+  background: rgba(220, 130, 180, 0.04);
+  color: #f0a0c8;
+}
+.accent-pink .pred-short.hi {
+  color: var(--text-dim);
+}
+
+/* full desc */
+.pred-desc-wrap {
+  margin-bottom: 14px;
+}
+.pred-desc-block {
+  margin-bottom: 10px;
+}
+.pred-desc-block:last-child {
+  margin-bottom: 0;
+}
+
+.pred-desc-lang {
+  font-family: "Cinzel", serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.pred-desc-lang::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(201, 168, 76, 0.2), transparent);
+}
+
+.pred-desc-text {
+  font-family: "EB Garamond", serif;
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.75;
+  opacity: 0.9;
+  white-space: pre-line;
+}
+.pred-desc-text.hindi {
+  font-size: 1.05rem;
+  color: var(--text-dim);
+}
+
+/* traits */
+.pred-traits-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.pred-traits-box {
+  flex: 1;
+  min-width: 130px;
+  padding: 12px;
+  border-radius: 9px;
+  border: 1px solid rgba(124, 235, 160, 0.22);
+  background: rgba(124, 235, 160, 0.04);
+}
+.pred-traits-box.caution {
+  border-color: rgba(240, 120, 120, 0.22);
+  background: rgba(240, 120, 120, 0.04);
+}
+
+.pred-traits-title {
+  font-family: "Cinzel", serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7ceba0;
+  margin-bottom: 7px;
+}
+.pred-traits-box.caution .pred-traits-title {
+  color: #f07878;
+}
+
+.pred-traits-text {
+  font-family: "EB Garamond", serif;
+  font-size: 0.92rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* career + relationship */
+.pred-info-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pred-info-box {
+  flex: 1;
+  min-width: 130px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.pred-info-label {
+  font-family: "Cinzel", serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 5px;
+}
+
+.pred-info-text {
+  font-family: "EB Garamond", serif;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin: 0;
+}

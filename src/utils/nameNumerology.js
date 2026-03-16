@@ -1,4 +1,4 @@
-const LETTER_MAP = {
+const PYTHAGOREAN_MAP = {
   A: 1,
   B: 2,
   C: 3,
@@ -26,6 +26,34 @@ const LETTER_MAP = {
   Y: 7,
   Z: 8,
 };
+const CHALDEAN_MAP = {
+  A: 1,
+  I: 1,
+  J: 1,
+  Q: 1,
+  Y: 1,
+  B: 2,
+  K: 2,
+  R: 2,
+  C: 3,
+  G: 3,
+  L: 3,
+  S: 3,
+  D: 4,
+  M: 4,
+  T: 4,
+  E: 5,
+  H: 5,
+  N: 5,
+  X: 5,
+  U: 6,
+  V: 6,
+  W: 6,
+  O: 7,
+  Z: 7,
+  F: 8,
+  P: 8,
+};
 
 const VOWELS = new Set(["A", "E", "I", "O", "U"]);
 
@@ -49,7 +77,24 @@ function cleanName(name) {
   return name.toUpperCase().replace(/[^A-Z]/g, "");
 }
 
-export function calcNameNumbers(fullName) {
+export function calculateChaldean(name) {
+  const letters = cleanName(name).split("");
+  let total = 0;
+
+  const breakdown = letters.map((letter) => {
+    const value = CHALDEAN_MAP[letter] || 0;
+    total += value;
+    return { letter, value };
+  });
+
+  return {
+    compoundNumber: total,
+    cheiroNumber: reduce(total),
+    breakdownCheiro: breakdown,
+  };
+}
+
+export function calculatePythagorean(fullName) {
   const letters = cleanName(fullName).split("");
   if (letters.length === 0) return null;
 
@@ -58,7 +103,7 @@ export function calcNameNumbers(fullName) {
   let personalityTotal = 0;
 
   const breakdown = letters.map((letter) => {
-    const value = LETTER_MAP[letter] || 0;
+    const value = PYTHAGOREAN_MAP[letter] || 0;
     const isVowel = VOWELS.has(letter);
 
     nameTotal += value;
@@ -78,7 +123,19 @@ export function calcNameNumbers(fullName) {
     breakdown,
   };
 }
-
+export function calcNameNumbers(fullName) {
+  const pythagorean = calculatePythagorean(fullName);
+  const chaldean = calculateChaldean(fullName);
+  return {
+    nameNumber: pythagorean.nameNumber,
+    soulNumber: pythagorean.soulNumber,
+    personalityNumber: pythagorean.personalityNumber,
+    breakdown: pythagorean.breakdown,
+    compoundNumber: chaldean.compoundNumber,
+    cheiroNumber: chaldean.cheiroNumber,
+    breakdownCheiro: chaldean.breakdownCheiro,
+  };
+}
 export const NAME_MEANINGS = {
   1: {
     title: "The Leader",

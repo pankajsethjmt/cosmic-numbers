@@ -1,8 +1,8 @@
 import { reduce, sumDigits } from "./calFunction";
-import { getSunSign } from "./sunSign";
-import { getRootNumber } from "./rootNumber";
-import { getFortuneNumber } from "./fortuneNumber";
-import { getDOBPrediction } from "./dobNumber";
+import { getSunSign } from "./sunSign/sunSign";
+import { getRootNumber } from "./rootNumber/rootNumber";
+import { getFortuneNumber } from "./fortuneNumber/fortuneNumber";
+import { getDOBPrediction } from "./dobNumber/dobNumber";
 
 // Get today's reduced number.
 

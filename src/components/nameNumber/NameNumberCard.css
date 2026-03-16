@@ -1,0 +1,395 @@
+/* ============================================================
+   NameNumberCard.css — Shared styles for all 5 Name cards
+   Each card uses CSS custom properties for its accent color
+   ============================================================ */
+
+/* ── BASE CARD ──────────────────────────────────────────────── */
+.nn-card {
+  border-radius: 16px;
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(20, 14, 42, 0.92),
+    rgba(10, 7, 24, 0.96)
+  );
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--nn-border);
+  animation: nnReveal 0.6s ease-out both;
+}
+
+@keyframes nnReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nn-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--nn-accent),
+    var(--nn-light),
+    var(--nn-accent),
+    transparent
+  );
+}
+
+/* ── COLOR THEMES ───────────────────────────────────────────── */
+/* Gold — Name Number */
+.nn-card.theme-gold,
+.nn-badge.theme-gold {
+  --nn-accent: #c9a84c;
+  --nn-light: #f0d080;
+  --nn-border: rgba(201, 168, 76, 0.32);
+  --nn-glow: rgba(201, 168, 76, 0.45);
+  --nn-bg-pill: rgba(201, 168, 76, 0.07);
+  --nn-tag-bg: rgba(201, 168, 76, 0.08);
+  --nn-tag-col: var(--gold-light);
+}
+
+/* Teal — Cheiro / Compound */
+.nn-card.theme-teal,
+.nn-badge.theme-teal {
+  --nn-accent: #38bdb4;
+  --nn-light: #80ede8;
+  --nn-border: rgba(56, 189, 180, 0.32);
+  --nn-glow: rgba(56, 189, 180, 0.45);
+  --nn-bg-pill: rgba(56, 189, 180, 0.07);
+  --nn-tag-bg: rgba(56, 189, 180, 0.08);
+  --nn-tag-col: #80ede8;
+}
+
+/* Purple — Soul */
+.nn-card.theme-purple,
+.nn-badge.theme-purple {
+  --nn-accent: #8a65d4;
+  --nn-light: #c4a0f0;
+  --nn-border: rgba(138, 101, 212, 0.32);
+  --nn-glow: rgba(138, 101, 212, 0.45);
+  --nn-bg-pill: rgba(138, 101, 212, 0.07);
+  --nn-tag-bg: rgba(138, 101, 212, 0.08);
+  --nn-tag-col: #c4a0f0;
+}
+
+/* Pink — Personality */
+.nn-card.theme-pink,
+.nn-badge.theme-pink {
+  --nn-accent: #d478a0;
+  --nn-light: #f0a0c8;
+  --nn-border: rgba(212, 120, 160, 0.32);
+  --nn-glow: rgba(212, 120, 160, 0.45);
+  --nn-bg-pill: rgba(212, 120, 160, 0.07);
+  --nn-tag-bg: rgba(212, 120, 160, 0.08);
+  --nn-tag-col: #f0a0c8;
+}
+
+/* ── HEADER ─────────────────────────────────────────────────── */
+.nn-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.nn-number-symbol {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--nn-light), var(--nn-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 12px var(--nn-glow));
+  animation: nnFloat 4s ease-in-out infinite;
+  flex-shrink: 0;
+  width: 70px;
+  text-align: center;
+}
+
+@keyframes nnFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.nn-names {
+  flex: 1;
+}
+
+.nn-type-label {
+  font-family: "Cinzel", serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--nn-accent);
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+
+.nn-title {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--nn-light), var(--nn-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.nn-planet {
+  font-family: "Cinzel", serif;
+  font-size: 0.72rem;
+  color: var(--nn-accent);
+  opacity: 0.65;
+  margin-top: 5px;
+}
+
+/* ── SHORT DESC QUOTES ──────────────────────────────────────── */
+.nn-short-wrap {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.nn-short-box {
+  flex: 1;
+  min-width: 150px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--nn-border);
+  background: var(--nn-bg-pill);
+  font-family: "EB Garamond", serif;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--nn-light);
+}
+
+.nn-short-box.hi {
+  color: var(--text-dim);
+}
+
+/* ── FULL DESC ──────────────────────────────────────────────── */
+.nn-desc-wrap {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 16px;
+  margin-bottom: 20px;
+}
+
+.nn-desc-block {
+  margin-bottom: 14px;
+}
+.nn-desc-block:last-child {
+  margin-bottom: 0;
+}
+
+.nn-desc-lang {
+  font-family: "Cinzel", serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--nn-accent);
+  opacity: 0.65;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nn-desc-lang::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--nn-border), transparent);
+}
+
+.nn-desc-text {
+  font-family: "EB Garamond", serif;
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.75;
+  opacity: 0.9;
+  white-space: pre-line;
+  margin: 0;
+}
+
+.nn-desc-text.hindi {
+  font-size: 1.05rem;
+  color: var(--text-dim);
+}
+
+/* ── TRAITS ─────────────────────────────────────────────────── */
+.nn-traits-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.nn-traits-box {
+  flex: 1;
+  min-width: 140px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(124, 235, 160, 0.22);
+  background: rgba(124, 235, 160, 0.04);
+}
+
+.nn-traits-box.caution {
+  border-color: rgba(240, 120, 120, 0.22);
+  background: rgba(240, 120, 120, 0.04);
+}
+
+.nn-traits-title {
+  font-family: "Cinzel", serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7ceba0;
+  margin-bottom: 8px;
+}
+
+.nn-traits-box.caution .nn-traits-title {
+  color: #f07878;
+}
+
+.nn-traits-text {
+  font-family: "EB Garamond", serif;
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── CAREER + RELATIONSHIPS ─────────────────────────────────── */
+.nn-info-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.nn-info-box {
+  flex: 1;
+  min-width: 140px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--nn-border);
+  background: var(--nn-bg-pill);
+}
+
+.nn-info-label {
+  font-family: "Cinzel", serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--nn-accent);
+  opacity: 0.7;
+  margin-bottom: 6px;
+}
+
+.nn-info-text {
+  font-family: "EB Garamond", serif;
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 500px) {
+  .nn-number-symbol {
+    font-size: 3rem;
+    width: 55px;
+  }
+  .nn-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* ============================================================
+   Summary Badges — top of NameResult
+   ============================================================ */
+.nn-summary-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.nn-badge {
+  flex: 1;
+  min-width: 80px;
+  max-width: 140px;
+  padding: 12px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--nn-border);
+  background: var(--nn-bg-pill);
+  text-align: center;
+  cursor: default;
+}
+
+.nn-badge-type {
+  font-family: "Cinzel", serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--nn-accent);
+  opacity: 0.7;
+  margin-bottom: 5px;
+  line-height: 1.3;
+}
+
+.nn-badge-num {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--nn-light, #f0d080);
+  background: linear-gradient(
+    135deg,
+    var(--nn-light, #f0d080),
+    var(--nn-accent, #c9a84c)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 6px var(--nn-glow));
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.nn-badge-title {
+  font-family: "Cinzel", serif;
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  line-height: 1.3;
+}
+
+@media (max-width: 480px) {
+  .nn-badge {
+    min-width: 65px;
+  }
+  .nn-badge-num {
+    font-size: 1.4rem;
+  }
+}
